@@ -1,0 +1,38 @@
+body {
+    margin: 0px;
+    background-color: #0E0E0E;
+    hegiht: 100%;
+}
+
+.card {
+    font-family:'Courier New', Courier, monospace;
+    background-image: url(./assets/background.png);
+    background-repeat: no-repeat;
+    background-size: cover; /*BG cobre toda a div (deformando)*/
+    width: 700px; /* Tamanho do background */
+    height: 348px;
+    border-width: 20px 40px 80px 50px;
+    border-style: solid;
+    border-color: black;
+    position: absolute;
+    top: 50%;                       /* Centralizar verticalmente */
+    left: 50%;                      /* Centralizar horizontalmente */
+    transform: translate(-50%, -50%); /* Corrigir referência para centro da div */
+    
+}
+
+h1 {
+    font-weight: 400;
+    font-size: 2em;
+}
+
+
+p {
+    display: inline;
+    font-size: larger;
+}
+
+img {
+    padding: 0 10px;
+    display: inline;
+}
