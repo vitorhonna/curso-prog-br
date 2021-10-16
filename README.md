@@ -56,15 +56,31 @@
 
 - `display`
 
+Controla como cada elemento é mostrado na tela.
+
 ```css
 
-tag {
-    display: a; /*  */
-    display: b; /*  */
-    display: c; /*  */
+selector {
+    display: none;          
+    /* Retira o elemento do layout da página (como se nunca tivesse sido colocado)*/
+    display: block;         
+    /* Quebra de linha no final, possível especificar tamanho (width, height) */
+    display: inline;        
+    /* Não tem quebra de linha, tamanho fixo */
+    display: inline-block;  
+    /* Não tem quebra de linha, mas permite especificar tamanho */
 }
 
 ```
+
+Propriedade `display` padrão dos elementos:
+> `<div>`: block
+> `<span>`: inline
+> `<p>`: block
+> `<img>`: inline
+
+! Nunca colocar um elemento com `display` do tipo *block* dentro de um parágrafo `<p>`, pois irá quebrar o fluxo do parágrafo (ex: background-color).
+
 
 - Overflow
 - Alinhamento horizontal
