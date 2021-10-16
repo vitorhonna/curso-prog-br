@@ -1,5 +1,6 @@
 # Curso de Desenvolvimento Web - Programador BR
 
+---
 ## Certificados
 
 *:( Ainda não temos certificados*
@@ -10,6 +11,7 @@
 
 * Node, Mongo (Módulo 21 ao 30)
 
+---
 ## Anotações
 
 ### Módulo 2
