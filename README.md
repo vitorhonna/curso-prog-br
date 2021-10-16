@@ -173,7 +173,9 @@ selector {
 ```css
 selector {
     position: fixed;
-    /*  */
+    /* Assim como em 'absolute', deixa outros elementos ocuparem seu lugar */
+    /* Ancora o elemento com relação ao viewport, não ao pai ou ascendentes */
+    /* O viewport é a parte da janela que está aparecendo na tela */
 }
 ```
 
