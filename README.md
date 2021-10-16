@@ -54,12 +54,11 @@
 
 ### Módulo 4: CSS Intermediário
 
-- `display`
+- #### `display`
 
 Controla como cada elemento é mostrado na tela.
 
 ```css
-
 selector {
     display: none;          
     /* Retira o elemento do layout da página (como se nunca tivesse sido colocado)*/
@@ -70,24 +69,22 @@ selector {
     display: inline-block;  
     /* Não tem quebra de linha, mas permite especificar tamanho */
 }
-
 ```
 
 Propriedade `display` padrão dos elementos:
-> `<div>`: block
-> `<span>`: inline
-> `<p>`: block
+> `<div>`: block  
+> `<span>`: inline  
+> `<p>`: block  
 > `<img>`: inline especial, age como inline-block
 
-! Nunca colocar um elemento com `display` do tipo *block* dentro de um parágrafo `<p>`, pois irá quebrar o fluxo do parágrafo (ex: background-color).
+[ ! ] Nunca colocar um elemento com `display` do tipo `block` dentro de um parágrafo `<p>`, pois irá quebrar o fluxo do parágrafo (ex: `background-color`).  
 
 
-- `overflow`
+- #### `overflow`
 
 Controla como um conteúdo se comporta em relação ao seu container.
 
 ```css
-
 tag {
     overflow: visible;
     /* Mostra todo o conteúdo, independente do elemento pai */
@@ -104,20 +101,19 @@ tag {
     overflow-y: scroll;
     /* Overflow VERTICAL, nesse caso adiciona somente barra de rolagem vertical*/
 }
-
 ```
 
 
-- Alinhamento horizontal
-- Position - Static e Relative
-- Position - Absolute
-- Position - Fixed
-- Position - Sticky
-- Float
-- Alinhamento Vertical
-- Viewport
-- Responsividade
-- Media Queries
+- #### Alinhamento horizontal
+- #### Position - Static e Relative
+- #### Position - Absolute
+- #### Position - Fixed
+- #### Position - Sticky
+- #### Float
+- #### Alinhamento Vertical
+- #### Viewport
+- #### Responsividade
+- #### Media Queries
 
 
 ## Markdown 
