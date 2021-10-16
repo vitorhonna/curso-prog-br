@@ -49,7 +49,9 @@
 ### Módulo 4: CSS Intermediário
 
 - Display
+
 `display:`
+
 -- opt1
 -- opt2
 
