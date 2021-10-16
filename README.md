@@ -77,12 +77,37 @@ Propriedade `display` padrão dos elementos:
 > `<div>`: block
 > `<span>`: inline
 > `<p>`: block
-> `<img>`: inline
+> `<img>`: inline especial, age como inline-block
 
 ! Nunca colocar um elemento com `display` do tipo *block* dentro de um parágrafo `<p>`, pois irá quebrar o fluxo do parágrafo (ex: background-color).
 
 
-- Overflow
+- `overflow`
+
+Controla como um conteúdo se comporta em relação ao seu container.
+
+```css
+
+tag {
+    overflow: visible;
+    /* Mostra todo o conteúdo, independente do elemento pai */
+    overflow: hidden;
+    /* Cropa o conteúdo usando o elemento pai */
+    overflow: scroll;
+    /* Cria uma barra de rolagem no elemento pai (vertical e horizontal) */
+    overflow: auto;
+    /* Cria uma barra de rolagem automaticamente quando necessário */
+
+
+    overflow-x: scroll;
+    /* Overflow HORIZONTAL, nesse caso adiciona somente barra de rolagem horizontal*/
+    overflow-y: scroll;
+    /* Overflow VERTICAL, nesse caso adiciona somente barra de rolagem vertical*/
+}
+
+```
+
+
 - Alinhamento horizontal
 - Position - Static e Relative
 - Position - Absolute
