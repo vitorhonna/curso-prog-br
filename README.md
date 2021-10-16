@@ -94,7 +94,7 @@ selector {
     overflow: scroll;
     /* Cria uma barra de rolagem no elemento pai (vertical e horizontal) */
     overflow: auto;
-    /* Cria uma barra de rolagem automaticamente quando necessário */
+    /* Cria uma barra de rolagem automaticamente quando necessário, ou altera o tamanho da div */
 
 
     overflow-x: scroll;
@@ -201,7 +201,19 @@ selector {
 
 ```css
 selector {
+    float: left;
+    /* Elemento fica flutuando a esquerda do próximo */
+    /* Ex: Uma imagem é envelopada por um texto */
 
+    
+}
+
+selector2 {
+    /* É possível impedir que algum elemento flutue ao redor deste usando 'clear'*/
+    clear: left;
+    /* Afeta somente o lado esquerdo, pode ser: both, left, right */
+    clear: none;
+    /* Valor padrão, não impede nada */
 }
 ```
 
