@@ -160,7 +160,9 @@ selector {
     /* A posição inicial do elemento é sua posição natural, porém em frente a outros elementos que também tomaram essa posição */
     /* Este elemento não é usado por outros como referência para seus posicionamentos */
     /* O elemento pai é usado somente se ele NÃO FOR ESTÁTICO, se for, o avô é usado como referência, e assim sucessivamente até o body ser usado como ref */
-
+    right: 0px;
+    bottom: 0px;
+    /* Se o elemento pai não for static: cola este elemento ao canto inferior direito do pai*/
 }
 ```
 
