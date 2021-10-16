@@ -54,6 +54,8 @@
 
 ### Módulo 4: CSS Intermediário
 
+<br>
+
 - #### `display`
 
 Controla como cada elemento é mostrado na tela.
@@ -104,16 +106,44 @@ tag {
 }
 ```
 
+<br>
 
 - #### Alinhamento horizontal
+
+<br>
+
 - #### Position - Static e Relative
+
+<br>
+
 - #### Position - Absolute
+
+<br>
+
 - #### Position - Fixed
+
+<br>
+
 - #### Position - Sticky
+
+<br>
+
 - #### Float
+
+<br>
+
 - #### Alinhamento Vertical
+
+<br>
+
 - #### Viewport
+
+<br>
+
 - #### Responsividade
+
+<br>
+
 - #### Media Queries
 
 
