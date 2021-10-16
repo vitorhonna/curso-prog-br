@@ -221,9 +221,29 @@ selector2 {
 
 - #### **Alinhamento Vertical**
 
+Para textos dentro de um `<div>`:
 ```css
 selector {
+    line-height: 100px;
+    /* Linha de 100px, se o elemento pai tem 100px, o texto centralizado */
+    /* DESVANTAGEM: TEM QUE SABER O TAMANHO DO ELEMENTO PAI */
+}
 
+selector {
+    position: absolute;
+    top: 50%;
+    /* Lembrando que o pai não pode ter position: static */
+    /* O topo da linha é alinhado com o centro do pai */
+    transform: translateY(-50%);
+    /* Translada o elemento -50% de seu tamanho, nesse caso a altura da linha, dessa forma o centro da linha fica alinhado com o centro do elemento pai */
+}
+
+Para centralizar um elemento:
+selector {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 ```
 
