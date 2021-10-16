@@ -50,9 +50,9 @@
 
 - Display
 
-> - `display:`
->   - opt1
->   - opt2
+`display`
+    - opt1
+    - opt2
 
 - Overflow
 - Alinhamento horizontal
