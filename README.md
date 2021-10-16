@@ -176,6 +176,7 @@ selector {
     /* Assim como em 'absolute', deixa outros elementos ocuparem seu lugar */
     /* Ancora o elemento com relação ao viewport, não ao pai ou ascendentes */
     /* O viewport é a parte da janela que está aparecendo na tela */
+    /* Para efeitos de dimensionamento, não leva em conta o pai */
 }
 ```
 
@@ -186,7 +187,11 @@ selector {
 ```css
 selector {
     position: sticky;
-    /*  */
+    /* Não deixa outros elementos ocuparem seu lugar */
+    /* Continua sendo referência para outros elementos */
+    /* Rola junto com o elemento pai/página */
+    top: 0px;
+    /* Rola com a página mas fica grudado no topo e não sai do viewport, neste momento o restante desliza por baixo para continuar rolando */
 }
 ```
 
