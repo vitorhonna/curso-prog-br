@@ -18,20 +18,17 @@ body {
     top: 50%;                           /* Centralizar verticalmente */
     left: 50%;                          /* Centralizar horizontalmente */
     transform: translate(-50%, -50%);   /* Corrigir referência para centro da div */
-    
 }
 
 h1 {
     font-weight: 400;
     font-size: 2.2em;
     padding: 15px 0 0 35px;
-    
 }
 
 ul {
     list-style-type: none;
     font-size: 1.5em;
-    
 }
 
 li {
@@ -39,6 +36,5 @@ li {
 }
 
 img {
-
     width: 50px;
 }
