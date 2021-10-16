@@ -54,7 +54,7 @@
 
 ### Módulo 4: CSS Intermediário
 
-- #### `display`
+- #### **`display`**
 
 Controla como cada elemento é mostrado na tela.
 
@@ -81,7 +81,7 @@ Propriedade `display` padrão dos elementos:
 
 <br>
 
-- #### `overflow`
+- #### **`overflow`**
 
 Controla como um conteúdo se comporta em relação ao seu container.
 
@@ -106,45 +106,45 @@ selector {
 
 <br>
 
-- #### Alinhamento horizontal
+- #### **Alinhamento horizontal**
 
 
 
 <br>
 
-- #### Position - Static e Relative
+- #### **Position - Static e Relative**
 
 <br>
 
-- #### Position - Absolute
+- #### **Position - Absolute**
 
 <br>
 
-- #### Position - Fixed
+- #### **Position - Fixed**
 
 <br>
 
-- #### Position - Sticky
+- #### **Position - Sticky**
 
 <br>
 
-- #### Float
+- #### **Float**
 
 <br>
 
-- #### Alinhamento Vertical
+- #### **Alinhamento Vertical**
 
 <br>
 
-- #### Viewport
+- #### **Viewport**
 
 <br>
 
-- #### Responsividade
+- #### **Responsividade**
 
 <br>
 
-- #### Media Queries
+- #### **Media Queries**
 
 
 ## Markdown 
