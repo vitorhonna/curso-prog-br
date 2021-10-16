@@ -145,6 +145,7 @@ selector {
     /* Muda a posição e sobrepõe outros elementos, só altera a posição do elemento afetado, diferente de 'margin' */
     /* O elemento é posicionado em relação a sua própria posição natural, se fosse 'static' */
     /* Posicionamentos usando relative são muito frágeis */
+    /* Os outros elementos não ocupam o espaço deste elemento, mesmo que movimentado */
 }
 ```
 
@@ -154,6 +155,11 @@ selector {
 
 ```css
 selector {
+    position: absolute;
+    /* Ancora o elemento com relação ao elemento pai, mas outros elementos passam a ocupar o mesmo espaço, como se este elemento não estivesse ali */
+    /* A posição inicial do elemento é sua posição natural, porém em frente a outros elementos que também tomaram essa posição */
+    /* Este elemento não é usado por outros como referência para seus posicionamentos */
+    /* O elemento pai é usado somente se ele NÃO FOR ESTÁTICO, se for, o avô é usado como referência, e assim sucessivamente até o body ser usado como ref */
 
 }
 ```
@@ -164,7 +170,8 @@ selector {
 
 ```css
 selector {
-
+    position: fixed;
+    /*  */
 }
 ```
 
@@ -174,7 +181,8 @@ selector {
 
 ```css
 selector {
-
+    position: sticky;
+    /*  */
 }
 ```
 
