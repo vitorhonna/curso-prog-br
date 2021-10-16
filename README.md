@@ -80,7 +80,6 @@ Propriedade `display` padrão dos elementos:
 [ ! ] Nunca colocar um elemento com `display: block` dentro de um parágrafo `<p>`, pois irá quebrar o fluxo do parágrafo (ex: `background-color`).
 
 <br>
-<br>
 
 - #### `overflow`
 
