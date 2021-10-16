@@ -48,13 +48,17 @@
 
 ### Módulo 4: CSS Intermediário
 
-- Display
+- `display`
 
-`display`
+```css
 
-- 
-    - opt1
-    - opt2
+tag {
+    display: a;
+    display: b;
+    display: c;
+}
+
+```
 
 - Overflow
 - Alinhamento horizontal
