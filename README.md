@@ -108,44 +108,128 @@ selector {
 
 - #### **Alinhamento horizontal**
 
+Usar a propriedade `margin`.
+
+Para `<div>`:
+```css
+selector {
+    margin: auto;
+    /* Centraliza horizontalmente, adicionando margens de ambos os lados preenchendo toda a largura da tela */
+    margin-left: auto;
+    /* Alinha a direita */
+}
+```
+
+Para `<img>`:
+> *Opção 1*:\
+> Mudar para `display: block` e usar `margin` na imagem.\
+> *Opção 2*:\
+> Colocar a imagem dentro de uma `<div>` e usar `text-align` com `center`, `left` ou `right` na div.
 
 
 <br>
 
 - #### **Position - Static e Relative**
 
+Usar a propriedade `position`.
+
+```css
+selector {
+    position: static;
+    /* Position padrão, posiciona conforme descrito em 'display' */
+
+    position: relative;
+    /* Posicionamento relativo ao padrão, pode ser usado com 'left', 'top'... */
+    left: 20px;
+    top: 20px;
+    /* Muda a posição e sobrepõe outros elementos, só altera a posição do elemento afetado, diferente de 'margin' */
+    /* O elemento é posicionado em relação a sua própria posição natural, se fosse 'static' */
+    /* Posicionamentos usando relative são muito frágeis */
+}
+```
+
 <br>
 
 - #### **Position - Absolute**
+
+```css
+selector {
+
+}
+```
 
 <br>
 
 - #### **Position - Fixed**
 
+```css
+selector {
+
+}
+```
+
 <br>
 
 - #### **Position - Sticky**
+
+```css
+selector {
+
+}
+```
 
 <br>
 
 - #### **Float**
 
+```css
+selector {
+
+}
+```
+
 <br>
 
 - #### **Alinhamento Vertical**
+
+```css
+selector {
+
+}
+```
 
 <br>
 
 - #### **Viewport**
 
+```css
+selector {
+
+}
+```
+
 <br>
 
 - #### **Responsividade**
+
+```css
+selector {
+
+}
+```
 
 <br>
 
 - #### **Media Queries**
 
+```css
+selector {
+
+}
+```
+
+<br>
+<br>
 
 ## Markdown 
 
