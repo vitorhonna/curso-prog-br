@@ -1,7 +1,18 @@
-# Read Me!
+# Curso de Desenvolvimento Web - Programador BR
 
-Separação dos arquivos em pastas por módulo: m + número do módulo + título do módulo.
+## Certificados
 
-Certificados:
+*:( Ainda não temos certificados*
 
-( :( Ainda não temos certificados )
+* Html, Css e Javascript (Módulo 1 ao 14)
+​* Firebase, jQuery, Bootstrap (Módulo 17 ao 20)
+​* Node, Mongo (Módulo 21 ao 30)
+
+## Anotações
+
+### Módulo 2
+
+### Módulo 3
+
+### Módulo 4
+
