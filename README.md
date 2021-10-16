@@ -55,7 +55,7 @@
 ### Módulo 4: CSS Intermediário
 
 - #### `display`
-
+\
 Controla como cada elemento é mostrado na tela.
 
 ```css
@@ -72,13 +72,15 @@ selector {
 ```
 
 Propriedade `display` padrão dos elementos:
-> `<div>`: block  
-> `<span>`: inline  
-> `<p>`: block  
+> `<div>`: block\
+> `<span>`: inline\
+> `<p>`: block\
 > `<img>`: inline especial, age como inline-block
 
-[ ! ] Nunca colocar um elemento com `display` do tipo `block` dentro de um parágrafo `<p>`, pois irá quebrar o fluxo do parágrafo (ex: `background-color`).  
-
+\
+[ ! ] Nunca colocar um elemento com `display: block` dentro de um parágrafo `<p>`, pois irá quebrar o fluxo do parágrafo (ex: `background-color`).\
+\
+\
 
 - #### `overflow`
 
