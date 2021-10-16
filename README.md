@@ -8,6 +8,12 @@
 - Firebase, jQuery, Bootstrap (Módulo 17 ao 20)
 - Node, Mongo (Módulo 21 ao 30)
 
+## Índice
+
+- [Módulo 2: HTML Básico](https://github.com/vitorhonna/cursoProgramadorBR#módulo-2-html-básico)
+- [Módulo 3: CSS Básico](https://github.com/vitorhonna/cursoProgramadorBR#módulo-3-css-básico)
+- [Módulo 4: CSS Intermediário](https://github.com/vitorhonna/cursoProgramadorBR#módulo-4-css-intermediário)
+
 ## Anotações
 
 ### Módulo 2: HTML Básico
@@ -53,9 +59,9 @@
 ```css
 
 tag {
-    display: a;
-    display: b;
-    display: c;
+    display: a; /*  */
+    display: b; /*  */
+    display: c; /*  */
 }
 
 ```
