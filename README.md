@@ -54,8 +54,6 @@
 
 ### Módulo 4: CSS Intermediário
 
-<br>
-
 - #### `display`
 
 Controla como cada elemento é mostrado na tela.
@@ -88,7 +86,7 @@ Propriedade `display` padrão dos elementos:
 Controla como um conteúdo se comporta em relação ao seu container.
 
 ```css
-tag {
+selector {
     overflow: visible;
     /* Mostra todo o conteúdo, independente do elemento pai */
     overflow: hidden;
@@ -109,6 +107,8 @@ tag {
 <br>
 
 - #### Alinhamento horizontal
+
+
 
 <br>
 
