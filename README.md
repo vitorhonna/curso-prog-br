@@ -251,10 +251,9 @@ selector {
 
 - #### **Viewport**
 
-```css
-selector {
-
-}
+Adicionar uma tag `<meta>` no `<head>` do HTML para que o navegador entenda como processar o site.
+```html
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 ```
 
 <br>
