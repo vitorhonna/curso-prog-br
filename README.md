@@ -2,9 +2,9 @@
 
 ## Certificados
 
-*:( Ainda não temos certificados*
+> *:( Ainda não temos certificados*
 
-* Html, Css e Javascript (Módulo 1 ao 14)
+* Html, CSS e Javascript (Módulo 1 ao 14)
 * Firebase, jQuery, Bootstrap (Módulo 17 ao 20)
 * Node, Mongo (Módulo 21 ao 30)
 
@@ -44,6 +44,8 @@
 
 ### Módulo 4: CSS Intermediário
 * Display
+
+
 * Overflow
 * Alinhamento horizontal
 * Position - Static e Relative
