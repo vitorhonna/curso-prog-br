@@ -315,8 +315,15 @@ Telas com menos de 250px: fundo preto e fonte vermelha */
 
 - #### **Formulário**
 
+`method`: método de envio de dados, `GET` ou `POST`\
+`action`: endpoint, se estiver no domínio da página pode ser apenas `/nomeDoEndpoint`
+
 ```html
-<>
+<!-- Exemplo de formulário para busca no youtube -->
+<form method="GET" action="https://www.youtube.com/results">
+    <input type="text" name="search_query" placeholder="Busca">
+    <input type="submit">
+</form>
 ```
 
 <br>
