@@ -1,0 +1,75 @@
+* { 
+    /* "Limpa" as formatações default dos elementos */
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: black;
+}
+
+.container {
+    max-width: 1000px;
+    margin: auto;
+}
+
+.header {
+    background-color: #31AED2;
+    color: white;
+    text-align: center;
+    padding: 10px;
+
+}
+
+.headerTitle {
+    text-transform: uppercase;
+    font-size: 26px;
+}
+
+.subscriptionBox {
+    padding: 20px;
+    background-image: url(../assets/people.jpg);
+    background-size: cover;
+    overflow: hidden;
+}
+
+.formContainer {
+    max-width: 230px;
+    background-color: #FFFFFFBB;
+    padding: 20px;
+    float: right;
+}
+
+.formTitle {
+    text-transform: uppercase;
+    font-size: 16px;
+}
+
+.marginBottom {
+    margin-bottom: 15px;
+}
+
+.formFields {
+    width: 100%;
+    box-sizing: border-box;
+    border: none;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+select {
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    background-image: url(../assets/arrow.jpg);
+    background-repeat: no-repeat;
+    background-position: calc(100% - 10px) center; 
+}
+
+button {
+    text-transform: uppercase;
+    color: white;
+    background-color: #31AED2;
+    font-weight: bold;
+}
