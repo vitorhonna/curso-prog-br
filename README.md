@@ -313,7 +313,7 @@ Telas com menos de 250px: fundo preto e fonte vermelha */
 
 ### Módulo 5: HTML Intermediário
 
-- #### **Formulário**
+- #### **Formulário: `form`**
 
 `method`: método de envio de dados, `GET` ou `POST`\
 `action`: endpoint, se estiver no domínio da página pode ser apenas `/nomeDoEndpoint`
@@ -328,7 +328,7 @@ Telas com menos de 250px: fundo preto e fonte vermelha */
 
 <br>
 
-- #### **Tipos de input**
+- #### **Tipos de `input`**
 
 `text`: Texto comum.\
 `password`: Esconde o que está sendo digitado.\
@@ -353,10 +353,20 @@ Telas com menos de 250px: fundo preto e fonte vermelha */
 
 <br>
 
-- #### **Select**
+- #### **Dropdown: `select`**
+
+O `name` do `select` é enviado junto com o `value` do `option`.\
+`selected` em `option` indica a posição padrão exibida no dropdown.\
+`size` em `select` indica o número de opções exibidas, se houver mais uma barra de rolagem aparece. Não dá o efeito de dropdown.\
+`multiple` em `select` permite a seleção de várias opções.
 
 ```html
-<>
+<!-- Envia: estado=SP, por exemplo -->
+<select name="estado" size="2">
+    <option value="RJ">Rio de Janeiro</option>
+    <option value="SP" selected>São Paulo</option>
+    <option value="MG">Minas Gerais</option>
+</select>
 ```
 
 <br>
