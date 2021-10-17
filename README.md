@@ -394,7 +394,7 @@ Buscar quais funcionalidades os navegadores suportam.
 `datetime-local`: permite a seleção de data e hora.\
 `file`: envio de arquivos. O método deve ser `POST`.\
 `number`: envio de números. Usar `min` e `max` para limitar os valores.\
-`range`: cria um slider entre `min` e `max`. Usar `value` para setar o default.\
+`range`: cria um slider entre `min` e `max`. Usar `value` para setar o default. `step` define o passo\
 `tel`: em mobile abre somente o teclado numérico.\
 `email`: verifica se o input contém elementos de email, como ponto e arroba.
 
@@ -405,7 +405,7 @@ Buscar quais funcionalidades os navegadores suportam.
     <input type="datetime-local" name="data" max="1995-01-24">
     <input type="file" name="arquivo">
     <input type="number" name="numero" min="0" max="10">
-    <input type="range" name="intervalo" min="0" max="10" value="6">
+    <input type="range" name="intervalo" min="0" max="10" value="6" step="1">
     <input type="tel" name="telefone">
     <input type="email" name="email">
 </form>
