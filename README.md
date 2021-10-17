@@ -58,7 +58,7 @@
 
 ### Módulo 4: CSS Intermediário
 
-- #### **`display`**
+- #### **Modos de exibição: `display`**
 
 Controla como cada elemento é mostrado na tela.
 
@@ -85,7 +85,7 @@ Propriedade `display` padrão dos elementos:
 
 <br>
 
-- #### **`overflow`**
+- #### **Controle de vazamento: `overflow`**
 
 Controla como um conteúdo se comporta em relação ao seu container.
 
@@ -330,7 +330,7 @@ Telas com menos de 250px: fundo preto e fonte vermelha */
 
 - #### **Tipos de `input`**
 
-`text`: Texto comum.\
+`text`: Texto comum em uma linha.\
 `password`: Esconde o que está sendo digitado.\
 `checkbox`: Passa `on` se não tiver `value`, senão passa o `value`. Permite várias seleções.\
 `radio`: Semelhante ao `checkbox`, mas só permite uma seleção entre tags com o mesmo `name`. `checked` indica o estado default como marcado.\
@@ -371,10 +371,15 @@ O `name` do `select` é enviado junto com o `value` do `option`.\
 
 <br>
 
-- #### **Textarea**
+- #### **Caixa de texto: `textarea`**
+
+Adiciona uma caixa para entrada de texto. É necessário conter um `name`, senão não é enviado.
 
 ```html
-<>
+<form method="GET" action="">
+    <textarea name="texto"></textarea>
+    <button>Enviar</button>
+</form>
 ```
 
 <br>
