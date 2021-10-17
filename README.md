@@ -29,6 +29,8 @@
 - Listas
 - Tabelas
 
+<br>
+<br>
 
 ### Módulo 3: CSS Básico
 
@@ -51,6 +53,8 @@
 - Estilo de link
 - Listas
 
+<br>
+<br>
 
 ### Módulo 4: CSS Intermediário
 
@@ -304,6 +308,64 @@ Telas com menos de 250px: fundo preto e fonte vermelha */
 ***IMPORTANTE***: A **ordem** dos *media queries* **IMPORTA**, deve ser do **MAIOR** para o **MENOR** se usando `max-width` */
 
 ***IMPORTANTE***: Os *media queries* devem ser colocados no **FINAL** do arquivo de CSS */
+
+<br>
+
+### Módulo 5: HTML Intermediário
+
+- #### **Formulário**
+
+```html
+<>
+```
+
+<br>
+
+- #### **Tipos de input**
+
+```html
+<>
+```
+
+<br>
+
+- #### **Select**
+
+```html
+<>
+```
+
+<br>
+
+- #### **Textarea**
+
+```html
+<>
+```
+
+<br>
+
+- #### **HTML 5 Intro**
+
+```html
+<>
+```
+
+<br>
+
+- #### **Input HTML 5**
+
+```html
+<>
+```
+
+<br>
+
+- #### **Tags Semânticas**
+
+```html
+<>
+```
 
 <br>
 <br>
