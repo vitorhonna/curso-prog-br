@@ -330,8 +330,25 @@ Telas com menos de 250px: fundo preto e fonte vermelha */
 
 - #### **Tipos de input**
 
+`text`: Texto comum.\
+`password`: Esconde o que está sendo digitado.\
+`checkbox`: Passa `on` se não tiver `value`, senão passa o `value`. Permite várias seleções.\
+`radio`: Semelhante ao `checkbox`, mas só permite uma seleção entre tags com o mesmo `name`. `checked` indica o estado default como marcado.\
+`reset`: Limpa todos os campos.\
+`submit`: Envia os dados. `value` indica o texto escrito no botão. (Para enviar é melhor usar a tag `button`).
+
 ```html
-<>
+<<form method="POST" action="/">
+    <input type="text" name="text">
+    <input type="password" name="password">
+    <input type="checkbox" name="checkbox" value="manterLogado">
+    <input type="radio" name="radio" value="M" checked>
+
+    <!-- Botão -->
+    <input type="submit">
+    <!-- Usar a tag button em vez de input para enviar -->
+    <button>Submit</button>
+</form>>
 ```
 
 <br>
