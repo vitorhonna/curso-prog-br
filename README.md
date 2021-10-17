@@ -305,9 +305,9 @@ Telas com menos de 250px: fundo preto e fonte vermelha */
 
 ```
 
-***IMPORTANTE***: A **ordem** dos *media queries* **IMPORTA**, deve ser do **MAIOR** para o **MENOR** se usando `max-width` */
+***IMPORTANTE***: A **ordem** dos *media queries* **IMPORTA**, deve ser do **MAIOR** para o **MENOR** se usando `max-width`.
 
-***IMPORTANTE***: Os *media queries* devem ser colocados no **FINAL** do arquivo de CSS */
+***IMPORTANTE***: Os *media queries* devem ser colocados no **FINAL** do arquivo de CSS.
 
 <br>
 
