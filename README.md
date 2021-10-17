@@ -413,10 +413,34 @@ Buscar quais funcionalidades os navegadores suportam.
 
 <br>
 
-- #### **Tags Semânticas**
+- #### **HTML5: Tags Semânticas**
+
+Tags semânticas informam os buscadores sobre o conteúdo da página, dessa forma eles podem ser melhor interpretadas e ranqueadas por eles. 
+
+`header`: cabeçalho da página. Mesmo comportamento da tag `<div>`\
+`nav`: barra de navegação.\
+`footer`: rodapé.\
+`main`: principal conteúdo do site, só pode haver 1 por página.\
+`section`: seção do site, para melhor organização.\
+`article`: artigo do site, seu conteúdo deve fazer sentido independente da página.\
 
 ```html
-<>
+<header>
+    <h2>Logo</h2>
+    <nav>
+        <!-- Itens -->
+    </nav>
+</header>
+
+<main>
+    <!-- Conteúdo principal -->
+    <section></section>
+    <article></article>
+</main>
+
+<footer>
+    <!-- Conteúdo -->
+</footer>
 ```
 
 <br>
