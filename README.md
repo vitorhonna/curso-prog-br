@@ -77,7 +77,7 @@ Propriedade `display` padrão dos elementos:
 > `<p>`: block\
 > `<img>`: inline especial, age como inline-block
 
-[ ! ] Nunca colocar um elemento com `display: block` dentro de um parágrafo `<p>`, pois irá quebrar o fluxo do parágrafo (ex: `background-color`).
+***IMPORTANTE***: Nunca colocar um elemento com `display: block` dentro de um parágrafo `<p>`, pois irá quebrar o fluxo do parágrafo (ex: `background-color`).
 
 <br>
 
@@ -260,21 +260,50 @@ Adicionar uma tag `<meta>` no `<head>` do HTML para que o navegador entenda como
 
 - #### **Responsividade**
 
-```css
-selector {
-
-}
-```
+Utilizar unidades de medida relativas ao tamanho da tela ou de elementos ascendentes, por exemplo `%`, `vw` ...
 
 <br>
 
 - #### **Media Queries**
 
+Aplica as regras de CSS somente se a tela corresponder a um tamanho máximo (`max-width`) ou mínimo (`min-width`).
 ```css
-selector {
-
+@media screen and (max-width: 400px) {
+    /* Executa somente em telas de no máximo 400px */
+    
+    selector {
+        /* Regras */
+    }
 }
 ```
+
+É possível adicionar diversos *Media Queries*, eles vão sendo aplicados consecutivamente:
+```css
+selector {
+    background-color: white;
+    color: blue;
+}
+@media screen and (max-width: 500px) {
+    selector {
+        background-color: black;
+    }
+}
+
+@media screen and (max-width: 250px) {
+    selector {
+        color: red;
+    }
+}
+/* No caso acima, temos:
+Telas com mais de 500px: fundo branco e fonte azul
+Telas com 250 a 500px: fundo preto e fonte azul
+Telas com menos de 250px: fundo preto e fonte vermelha */
+
+```
+
+***IMPORTANTE***: A **ordem** dos *media queries* **IMPORTA**, deve ser do **MAIOR** para o **MENOR** se usando `max-width` */
+
+***IMPORTANTE***: Os *media queries* devem ser colocados no **FINAL** do arquivo de CSS */
 
 <br>
 <br>
