@@ -417,7 +417,7 @@ Buscar quais funcionalidades os navegadores suportam.
 
 Tags semânticas informam os buscadores sobre o conteúdo da página, dessa forma eles podem ser melhor interpretadas e ranqueadas por eles. 
 
-`header`: cabeçalho da página. Mesmo comportamento da tag `<div>`\
+`header`: cabeçalho da página. Mesmo comportamento da tag `<div>`.\
 `nav`: barra de navegação. Aparece dentro do `header`.\
 `footer`: rodapé.\
 `main`: principal conteúdo do site, só pode haver 1 por página.\
