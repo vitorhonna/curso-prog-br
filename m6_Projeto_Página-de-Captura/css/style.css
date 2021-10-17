@@ -5,8 +5,9 @@
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     background-color: black;
+    margin: 10px;
 }
 
 .container {
@@ -19,12 +20,16 @@ body {
     color: white;
     text-align: center;
     padding: 10px;
-
+    border-radius: 10px 10px 0 0;
 }
 
 .headerTitle {
     text-transform: uppercase;
     font-size: 26px;
+}
+
+.main {
+    background-color: #202121;
 }
 
 .subscriptionBox {
@@ -39,15 +44,21 @@ body {
     background-color: #FFFFFFBB;
     padding: 20px;
     float: right;
+    border-radius: 5px;
 }
 
 .formTitle {
     text-transform: uppercase;
     font-size: 16px;
+    text-align: center;
 }
 
 .marginBottom {
     margin-bottom: 15px;
+}
+
+.formText {
+    text-align: justify;
 }
 
 .formFields {
@@ -56,6 +67,11 @@ body {
     border: none;
     margin-bottom: 10px;
     padding: 10px;
+}
+
+.formFields:hover {
+    background-color: rgb(245, 245, 245);
+    transform: scale(1.02);
 }
 
 select {
@@ -67,9 +83,85 @@ select {
     background-position: calc(100% - 10px) center; 
 }
 
-button {
+.button {
     text-transform: uppercase;
     color: white;
     background-color: #31AED2;
     font-weight: bold;
+    margin-top: 5px;
+    margin-bottom: 0;
+}
+
+.button:hover {
+    background-color: #31c8f1;
+    transform: scale(0.98);
+    transition: 0.1s;
+}
+
+
+.footer {
+    background-color: #202121;
+    padding: 40px;
+    text-align: center;
+    border-radius: 0 0 10px 10px;
+    overflow: hidden;
+}
+
+.picture {
+    width: 150px;
+    border-radius: 2px;
+    box-shadow: 0px 0px 100px black;
+}
+
+.picture:hover {
+    transform: scale(1.03);
+    transition: 0.4s;
+}
+
+.footerTitle {
+    font-size: 24px;
+}
+
+.description {
+    color: white;
+    display: inline-block;
+    max-width: 40%;
+    margin-left: 40px;
+    text-align: justify;
+}
+
+.footerMarginBottom {
+    margin-bottom: 20px; 
+}
+
+.picture, .description {
+    vertical-align: middle;
+}
+
+@media screen and (max-width: 600px) {
+    
+    .headerTitle {
+        font-size: 20px;
+    }
+
+    .formContainer {
+        max-width: 100%;
+    }
+    
+    .formFields {
+        padding: 15px;
+    }
+
+    .picture {
+        width: 100px;
+        display: block;
+        margin: auto;
+        margin-bottom: 20px;
+    }
+
+    .description {
+        display: block;
+        max-width: 90%;
+        margin: auto;
+    }
 }
