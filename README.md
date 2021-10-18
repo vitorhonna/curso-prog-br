@@ -447,6 +447,25 @@ Tags semânticas informam os buscadores sobre o conteúdo da página, dessa form
 <br>
 <br>
 
+## Design Resources
+
+[Pinterest](https://www.pinterest.com)\
+[Behance](https://www.behance.net)\
+[freepik](https://www.freepik.com)\
+[streamline icons](https://ego.streamlineicons.com/)\
+[steamline hq](https://streamlinehq.com/)\
+[envato](https://envato.com/)\
+[unsplash](https://unsplash.com/)\
+[flaticon](https://www.flaticon.com/)
+[pexels](https://www.pexels.com/)
+
+
+
+
+
+<br>
+<br>
+
 ## Markdown 
 
 - [Cheatsheet](https://www.markdownguide.org/cheat-sheet/)
