@@ -2,92 +2,93 @@
 
 ## Certificados
 
-> *:( Ainda não temos certificados*
+> _:( Ainda não temos certificados_
 
-- Html, CSS e Javascript (Módulo 1 ao 14)
-- Firebase, jQuery, Bootstrap (Módulo 17 ao 20)
-- Node, Mongo (Módulo 21 ao 30)
+-   Html, CSS e Javascript (Módulo 1 ao 14)
+-   Firebase, jQuery, Bootstrap (Módulo 17 ao 20)
+-   Node, Mongo (Módulo 21 ao 30)
 
 ## Índice
 
-- [Módulo 2: HTML Básico](https://github.com/vitorhonna/cursoProgramadorBR#módulo-2-html-básico)
-- [Módulo 3: CSS Básico](https://github.com/vitorhonna/cursoProgramadorBR#módulo-3-css-básico)
-- [Módulo 4: CSS Intermediário](https://github.com/vitorhonna/cursoProgramadorBR#módulo-4-css-intermediário)
-- [Módulo 5: HTML Intermediário](https://github.com/vitorhonna/cursoProgramadorBR#módulo-5-html-intermediário)
-- [Módulo 8: Javascript Básico](https://github.com/vitorhonna/cursoProgramadorBR#módulo-8-javascript-básico)
+-   [Módulo 2: HTML Básico](https://github.com/vitorhonna/cursoProgramadorBR#módulo-2-html-básico)
+-   [Módulo 3: CSS Básico](https://github.com/vitorhonna/cursoProgramadorBR#módulo-3-css-básico)
+-   [Módulo 4: CSS Intermediário](https://github.com/vitorhonna/cursoProgramadorBR#módulo-4-css-intermediário)
+-   [Módulo 5: HTML Intermediário](https://github.com/vitorhonna/cursoProgramadorBR#módulo-5-html-intermediário)
+-   [Módulo 8: Javascript Básico](https://github.com/vitorhonna/cursoProgramadorBR#módulo-8-javascript-básico)
 
 ## Anotações
 
 ### Módulo 2: HTML Básico
 
-- Tag
-- Estrutura Básica
-- Títulos e Parágrafos
-- Comentários
-- Formatação
-- Links
-- Imagens
-- Quebra de Linha
-- Listas
-- Tabelas
+-   Tag
+-   Estrutura Básica
+-   Títulos e Parágrafos
+-   Comentários
+-   Formatação
+-   Links
+-   Imagens
+-   Quebra de Linha
+-   Listas
+-   Tabelas
 
 <br>
 <br>
 
 ### Módulo 3: CSS Básico
 
-- CSS inline
-- CSS interno
-- CSS externo
-- Classes e Ids
-- Cores
-- Background
-- Div
-- Ferramentas do Google Chrome
-- Unidades de medida (fixas)
-- Unidades de Medida (referência)
-- Margin e Padding
-- Border
-- Box Model
-- Ajustes de texto
-- Fontes
-- Usando fontes customizadas
-- Estilo de link
-- Listas
+-   CSS inline
+-   CSS interno
+-   CSS externo
+-   Classes e Ids
+-   Cores
+-   Background
+-   Div
+-   Ferramentas do Google Chrome
+-   Unidades de medida (fixas)
+-   Unidades de Medida (referência)
+-   Margin e Padding
+-   Border
+-   Box Model
+-   Ajustes de texto
+-   Fontes
+-   Usando fontes customizadas
+-   Estilo de link
+-   Listas
 
 <br>
 <br>
 
 ### Módulo 4: CSS Intermediário
 
-- #### **Modos de exibição: `display`**
+-   #### **Modos de exibição: `display`**
 
 Controla como cada elemento é mostrado na tela.
 
 ```css
 selector {
-    display: none;          
+    display: none;
     /* Retira o elemento do layout da página (como se nunca tivesse sido colocado)*/
-    display: block;         
+    display: block;
     /* Quebra de linha no final, possível especificar tamanho (width, height) */
-    display: inline;        
+    display: inline;
     /* Não tem quebra de linha, tamanho fixo */
-    display: inline-block;  
+    display: inline-block;
     /* Não tem quebra de linha, mas permite especificar tamanho */
 }
 ```
 
 Propriedade `display` padrão dos elementos:
+
 > `<div>`: block\
 > `<span>`: inline\
 > `<p>`: block\
 > `<img>`: inline especial, age como inline-block
 
-***IMPORTANTE***: Nunca colocar um elemento com `display: block` dentro de um parágrafo `<p>`, pois irá quebrar o fluxo do parágrafo (ex: `background-color`).
+**_IMPORTANTE_**: Nunca colocar um elemento com `display: block` dentro de um parágrafo `<p>`, pois irá quebrar o fluxo do parágrafo (ex: `background-color`).
 
 <br>
 
-- #### **Controle de vazamento: `overflow`**
+-   #### **Controle de vazamento: `overflow`**
 
 Controla como um conteúdo se comporta em relação ao seu container.
 
@@ -102,7 +103,6 @@ selector {
     overflow: auto;
     /* Cria uma barra de rolagem automaticamente quando necessário, ou altera o tamanho da div */
 
-
     overflow-x: scroll;
     /* Overflow HORIZONTAL, nesse caso adiciona somente barra de rolagem horizontal*/
     overflow-y: scroll;
@@ -112,11 +112,12 @@ selector {
 
 <br>
 
-- #### **Alinhamento horizontal**
+-   #### **Alinhamento horizontal**
 
 Usar a propriedade `margin`.
 
 Para `<div>`:
+
 ```css
 selector {
     margin: auto;
@@ -127,15 +128,15 @@ selector {
 ```
 
 Para `<img>`:
-> *Opção 1*:\
-> Mudar para `display: block` e usar `margin` na imagem.\
-> *Opção 2*:\
-> Colocar a imagem dentro de uma `<div>` e usar `text-align` com `center`, `left` ou `right` na div.
 
+> _Opção 1_:\
+> Mudar para `display: block` e usar `margin` na imagem.\
+> _Opção 2_:\
+> Colocar a imagem dentro de uma `<div>` e usar `text-align` com `center`, `left` ou `right` na div.
 
 <br>
 
-- #### **Position - Static e Relative**
+-   #### **Position - Static e Relative**
 
 Usar a propriedade `position`.
 
@@ -157,7 +158,7 @@ selector {
 
 <br>
 
-- #### **Position - Absolute**
+-   #### **Position - Absolute**
 
 ```css
 selector {
@@ -174,7 +175,7 @@ selector {
 
 <br>
 
-- #### **Position - Fixed**
+-   #### **Position - Fixed**
 
 ```css
 selector {
@@ -188,7 +189,7 @@ selector {
 
 <br>
 
-- #### **Position - Sticky**
+-   #### **Position - Sticky**
 
 ```css
 selector {
@@ -203,15 +204,13 @@ selector {
 
 <br>
 
-- #### **Float**
+-   #### **Float**
 
 ```css
 selector {
     float: left;
     /* Elemento fica flutuando a esquerda do próximo */
     /* Ex: Uma imagem é envelopada por um texto */
-
-    
 }
 
 selector2 {
@@ -225,9 +224,10 @@ selector2 {
 
 <br>
 
-- #### **Alinhamento Vertical**
+-   #### **Alinhamento Vertical**
 
 Para textos dentro de um `<div>`:
+
 ```css
 selector {
     line-height: 100px;
@@ -244,8 +244,7 @@ selector {
     /* Translada o elemento -50% de seu tamanho, nesse caso a altura da linha, dessa forma o centro da linha fica alinhado com o centro do elemento pai */
 }
 
-Para centralizar um elemento:
-selector {
+paracentralizarum elemento: selector {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -255,35 +254,38 @@ selector {
 
 <br>
 
-- #### **Viewport**
+-   #### **Viewport**
 
 Adicionar uma tag `<meta>` no `<head>` do HTML para que o navegador entenda como processar o site.
+
 ```html
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 ```
 
 <br>
 
-- #### **Responsividade**
+-   #### **Responsividade**
 
 Utilizar unidades de medida relativas ao tamanho da tela ou de elementos ascendentes, por exemplo `%`, `vw` ...
 
 <br>
 
-- #### **Media Queries**
+-   #### **Media Queries**
 
 Aplica as regras de CSS somente se a tela corresponder a um tamanho máximo (`max-width`) ou mínimo (`min-width`).
+
 ```css
 @media screen and (max-width: 400px) {
     /* Executa somente em telas de no máximo 400px */
-    
+
     selector {
         /* Regras */
     }
 }
 ```
 
-É possível adicionar diversos *Media Queries*, eles vão sendo aplicados consecutivamente:
+É possível adicionar diversos _Media Queries_, eles vão sendo aplicados consecutivamente:
+
 ```css
 selector {
     background-color: white;
@@ -304,18 +306,17 @@ selector {
 Telas com mais de 500px: fundo branco e fonte azul
 Telas com 250 a 500px: fundo preto e fonte azul
 Telas com menos de 250px: fundo preto e fonte vermelha */
-
 ```
 
-***IMPORTANTE***: A **ordem** dos *media queries* **IMPORTA**, deve ser do **MAIOR** para o **MENOR** se usando `max-width`.
+**_IMPORTANTE_**: A **ordem** dos _media queries_ **IMPORTA**, deve ser do **MAIOR** para o **MENOR** se usando `max-width`.
 
-***IMPORTANTE***: Os *media queries* devem ser colocados no **FINAL** do arquivo de CSS.
+**_IMPORTANTE_**: Os _media queries_ devem ser colocados no **FINAL** do arquivo de CSS.
 
 <br>
 
 ### Módulo 5: HTML Intermediário
 
-- #### **Formulário: `form`**
+-   #### **Formulário: `form`**
 
 `method`: método de envio de dados, `GET` ou `POST`\
 `action`: endpoint, se estiver no domínio da página pode ser apenas `/nomeDoEndpoint`
@@ -323,14 +324,14 @@ Telas com menos de 250px: fundo preto e fonte vermelha */
 ```html
 <!-- Exemplo de formulário para busca no youtube -->
 <form method="GET" action="https://www.youtube.com/results">
-    <input type="text" name="search_query" placeholder="Busca">
-    <input type="submit">
+    <input type="text" name="search_query" placeholder="Busca" />
+    <input type="submit" />
 </form>
 ```
 
 <br>
 
-- #### **Tipos de `input`**
+-   #### **Tipos de `input`**
 
 `text`: Texto comum em uma linha.\
 `password`: Esconde o que está sendo digitado.\
@@ -340,22 +341,24 @@ Telas com menos de 250px: fundo preto e fonte vermelha */
 `submit`: Envia os dados. `value` indica o texto escrito no botão. (Para enviar é melhor usar a tag `button`).
 
 ```html
-<<form method="POST" action="/">
-    <input type="text" name="text">
-    <input type="password" name="password">
-    <input type="checkbox" name="checkbox" value="manterLogado">
-    <input type="radio" name="radio" value="M" checked>
+<
+<form method="POST" action="/">
+    <input type="text" name="text" />
+    <input type="password" name="password" />
+    <input type="checkbox" name="checkbox" value="manterLogado" />
+    <input type="radio" name="radio" value="M" checked />
 
     <!-- Botão -->
-    <input type="submit">
+    <input type="submit" />
     <!-- Usar a tag button em vez de input para enviar -->
     <button>Submit</button>
-</form>>
+</form>
+>
 ```
 
 <br>
 
-- #### **Dropdown: `select`**
+-   #### **Dropdown: `select`**
 
 O `name` do `select` é enviado junto com o `value` do `option`.\
 `selected` em `option` indica a posição padrão exibida no dropdown.\
@@ -373,7 +376,7 @@ O `name` do `select` é enviado junto com o `value` do `option`.\
 
 <br>
 
-- #### **Caixa de texto: `textarea`**
+-   #### **Caixa de texto: `textarea`**
 
 Adiciona uma caixa para entrada de texto. É necessário conter um `name`, senão não é enviado.
 
@@ -386,7 +389,7 @@ Adiciona uma caixa para entrada de texto. É necessário conter um `name`, senã
 
 <br>
 
-- #### **HTML 5: tipos de `input`**
+-   #### **HTML 5: tipos de `input`**
 
 caniuse.com\
 Buscar quais funcionalidades os navegadores suportam.
@@ -401,23 +404,24 @@ Buscar quais funcionalidades os navegadores suportam.
 `email`: verifica se o input contém elementos de email, como ponto e arroba.
 
 ```html
-<<form method="POST" action="/">
-    <input type="color" name="cor">
-    <input type="date" name="data" max="1995-01-24">
-    <input type="datetime-local" name="data" max="1995-01-24">
-    <input type="file" name="arquivo">
-    <input type="number" name="numero" min="0" max="10">
-    <input type="range" name="intervalo" min="0" max="10" value="6" step="1">
-    <input type="tel" name="telefone">
-    <input type="email" name="email">
+<
+<form method="POST" action="/">
+    <input type="color" name="cor" />
+    <input type="date" name="data" max="1995-01-24" />
+    <input type="datetime-local" name="data" max="1995-01-24" />
+    <input type="file" name="arquivo" />
+    <input type="number" name="numero" min="0" max="10" />
+    <input type="range" name="intervalo" min="0" max="10" value="6" step="1" />
+    <input type="tel" name="telefone" />
+    <input type="email" name="email" />
 </form>
 ```
 
 <br>
 
-- #### **HTML5: Tags Semânticas**
+-   #### **HTML5: Tags Semânticas**
 
-Tags semânticas informam os buscadores sobre o conteúdo da página, dessa forma eles podem ser melhor interpretadas e ranqueadas por eles. 
+Tags semânticas informam os buscadores sobre o conteúdo da página, dessa forma eles podem ser melhor interpretadas e ranqueadas por eles.
 
 `header`: cabeçalho da página. Mesmo comportamento da tag `<div>`.\
 `nav`: barra de navegação. Aparece dentro do `header`.\
@@ -450,43 +454,162 @@ Tags semânticas informam os buscadores sobre o conteúdo da página, dessa form
 
 ### Módulo 8: Javascript Básico
 
-- #### **Hello World**
+-   #### **Hello World**
+
+Um script `javascript` pode ser adicionado ao `HTML` com a tag `<script>`, internamente ou em arquivos separados.
+
+```html
+<script>
+    alert("Hello, World");
+</script>
+
+<!-- ou -->
+
+<script src="script.js"></script>
+```
+
+Com _script.js_:
 
 ```js
 alert("Hello, World");
 ```
 
-Um script `javascript` pode ser adicionado ao `HTML` com a tag `<script>` ou em arquivos separados.
+<br>
 
-```html
-<script src="script.js"></script>
+-   #### **Console**
+
+Print no console:
+
+```js
+console.log("Hello, World");
 ```
 
-- #### **Algoritmos**
-- #### **Console**
-- #### **Variáveis**
-- #### **Tipos de dados**
-- #### **Operações aritméticas**
-- #### **Atribuições**
-- #### **Operadores comparativos**
-- #### **Operadores lógicos**
-- #### **Strings**
-- #### **Transformando Strings em Números**
-- #### **Alert e Prompt**
-- #### **Condicionais - IF**
-- #### **Operador Ternário**
-- #### **Condicionais - Switch**
-- #### **Repetição - FOR e WHILE**
-- #### **Arrays**
-- #### **Funções**
-- #### **Funções parte 2**
-- #### **Juntando tudo até aqui.**
-- #### **Objetos - Propriedades**
-- #### **Objetos - Métodos**
-- #### **Objetos - Construtores**
-- #### **Objetos - Resumo**
-- #### **Datas**
-- #### **Const, Let e Var**
+<br>
+
+-   #### **Variáveis**
+
+```js
+var a = "Hello, World");
+consol.log(a);
+```
+
+<br>
+
+-   #### **Tipos de dados**
+
+`Boolean`: True ou False\
+ `Null`: variável vazia\
+ `Undefined`: retorno de variáveis não inicializadas\
+ `Number`: número, console mostra em azul\
+ `String`: sequência de caracteres, console mostra em preto
+
+<br>
+
+-   #### **Operações aritméticas**
+
+`+`: Adição\
+`-`: Subtração\
+`*`: Multiplicação\
+`/`: Divisão\
+`%`: Módulo (resto de divisão)\
+`++`: Incremento\
+`--`: Decremento
+
+Incremento e decremento podem aparecer antes ou depois da variável, isso muda como é feita uma atribuição, por exemplo:
+
+```js
+var a = 30;
+var b = --a;
+console.log("a = " + a); // a = 29
+console.log("b = " + b); // b = 29 <<<
+```
+
+```js
+var a = 30;
+var b = a--;
+console.log("a = " + a); // a = 29
+console.log("b = " + b); // b = 30 <<<
+```
+
+<br>
+
+-   #### **Atribuições**
+
+<br>
+
+-   #### **Operadores comparativos**
+
+<br>
+
+-   #### **Operadores lógicos**
+
+<br>
+
+-   #### **Strings**
+
+<br>
+
+-   #### **Transformando Strings em Números**
+
+<br>
+
+-   #### **Alert e Prompt**
+
+<br>
+
+-   #### **Condicionais - IF**
+
+<br>
+
+-   #### **Operador Ternário**
+
+<br>
+
+-   #### **Condicionais - Switch**
+
+<br>
+
+-   #### **Repetição - FOR e WHILE**
+
+<br>
+
+-   #### **Arrays**
+
+<br>
+
+-   #### **Funções**
+
+<br>
+
+-   #### **Funções parte 2**
+
+<br>
+
+-   #### **Juntando tudo até aqui.**
+
+<br>
+
+-   #### **Objetos - Propriedades**
+
+<br>
+
+-   #### **Objetos - Métodos**
+
+<br>
+
+-   #### **Objetos - Construtores**
+
+<br>
+
+-   #### **Objetos - Resumo**
+
+<br>
+
+-   #### **Datas**
+
+<br>
+
+-   #### **Const, Let e Var**
 
 <br>
 <br>
@@ -506,8 +629,8 @@ Um script `javascript` pode ser adicionado ao `HTML` com a tag `<script>` ou em 
 <br>
 <br>
 
-## Markdown 
+## Markdown
 
-- [Cheatsheet](https://www.markdownguide.org/cheat-sheet/)
-- [Basic Syntax](https://www.markdownguide.org/basic-syntax/)
-- [Extended Syntax](https://www.markdownguide.org/extended-syntax/)
+-   [Cheatsheet](https://www.markdownguide.org/cheat-sheet/)
+-   [Basic Syntax](https://www.markdownguide.org/basic-syntax/)
+-   [Extended Syntax](https://www.markdownguide.org/extended-syntax/)
