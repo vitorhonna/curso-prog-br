@@ -451,6 +451,17 @@ Tags semânticas informam os buscadores sobre o conteúdo da página, dessa form
 ### Módulo 8: Javascript Básico
 
 - #### **Hello World**
+
+```js
+alert("Hello, World");
+```
+
+Um script `javascript` pode ser adicionado ao `HTML` com a tag `<script>` ou em arquivos separados.
+
+```html
+<script src="script.js"></script>
+```
+
 - #### **Algoritmos**
 - #### **Console**
 - #### **Variáveis**
