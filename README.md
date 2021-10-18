@@ -14,6 +14,7 @@
 - [Módulo 3: CSS Básico](https://github.com/vitorhonna/cursoProgramadorBR#módulo-3-css-básico)
 - [Módulo 4: CSS Intermediário](https://github.com/vitorhonna/cursoProgramadorBR#módulo-4-css-intermediário)
 - [Módulo 5: HTML Intermediário](https://github.com/vitorhonna/cursoProgramadorBR#módulo-5-html-intermediário)
+- [Módulo 8: Javascript Básico](https://github.com/vitorhonna/cursoProgramadorBR#módulo-8-javascript-básico)
 
 ## Anotações
 
@@ -447,6 +448,38 @@ Tags semânticas informam os buscadores sobre o conteúdo da página, dessa form
 <br>
 <br>
 
+### Módulo 8: Javascript Básico
+
+- #### **Hello World**
+- #### **Algoritmos**
+- #### **Console**
+- #### **Variáveis**
+- #### **Tipos de dados**
+- #### **Operações aritméticas**
+- #### **Atribuições**
+- #### **Operadores comparativos**
+- #### **Operadores lógicos**
+- #### **Strings**
+- #### **Transformando Strings em Números**
+- #### **Alert e Prompt**
+- #### **Condicionais - IF**
+- #### **Operador Ternário**
+- #### **Condicionais - Switch**
+- #### **Repetição - FOR e WHILE**
+- #### **Arrays**
+- #### **Funções**
+- #### **Funções parte 2**
+- #### **Juntando tudo até aqui.**
+- #### **Objetos - Propriedades**
+- #### **Objetos - Métodos**
+- #### **Objetos - Construtores**
+- #### **Objetos - Resumo**
+- #### **Datas**
+- #### **Const, Let e Var**
+
+<br>
+<br>
+
 ## Design Resources
 
 [Pinterest](https://www.pinterest.com)\
@@ -458,10 +491,6 @@ Tags semânticas informam os buscadores sobre o conteúdo da página, dessa form
 [unsplash](https://unsplash.com/)\
 [flaticon](https://www.flaticon.com/)
 [pexels](https://www.pexels.com/)
-
-
-
-
 
 <br>
 <br>
