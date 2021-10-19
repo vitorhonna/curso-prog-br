@@ -603,13 +603,9 @@ console.log("b = " + b); // b = 30 <<<
 
 - #### **Objetos - Resumo**
 
-gitkraken teste
-
 <br>
 
 - #### **Datas**
-
-Teste teste
 
 <br>
 
