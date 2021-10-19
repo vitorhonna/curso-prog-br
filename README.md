@@ -535,6 +535,8 @@ console.log("b = " + b); // b = 30 <<<
 
 -   #### **Atribuições**
 
+Gitkraken teste
+
 <br>
 
 -   #### **Operadores comparativos**
