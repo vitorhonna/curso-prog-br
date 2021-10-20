@@ -490,7 +490,7 @@ console.log("Hello, World");
 
 ```js
 var a = "Hello, World");
-consol.log(a);
+console.log(a);
 ```
 
 <br>
@@ -535,9 +535,39 @@ console.log("b = " + b); // b = 30 <<<
 
 - #### **Atribuições**
 
+| Operator | Usage   | Meaning    |
+| -------- | ------- | ---------- |
+| `=`      | x = y   | x = y      |
+| `+=`     | x += y  | x = x + y  |
+| `-=`     | x -= y  | x = x - y  |
+| `*=`     | x \*= y | x = x \* y |
+| `/=`     | x /= y  | x = x / y  |
+| `%=`     | x %= y  | x = x % y  |
+
 <br>
 
 - #### **Operadores comparativos**
+
+| Operator | Usage                   |
+| -------- | ----------------------- |
+| `==`     | igual                   |
+| `===`    | idêntico (valor e tipo) |
+| `!=`     | diferente               |
+| `!==`    | valor e tipo diferentes |
+| `>`      | maior                   |
+| `<`      | menor                   |
+| `>=`     | maior ou igual          |
+| `<=`     | menor ou igual          |
+
+Exemplo de uso:
+
+```js
+var a = 3;
+var b = "3";
+
+console.log(a == 3); // True
+console.log(a === 3); // False
+```
 
 <br>
 
