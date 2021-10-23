@@ -576,17 +576,54 @@ console.log(a === 3); // False
 | Operator | Usage   |
 | -------- | ------- |
 | `&&`     | E       |
-| `||`     | OU      |
+| `\|\|`   | OU      |
 | `!`      | Negação |
-
 
 <br>
 
 - #### **Strings**
 
-<br>
+`str`\
+Pode-se usar aspas "duplas" ou 'simples'.
 
-- #### **Transformando Strings em Números**
+```js
+var str = "Texto";
+var str = "Texto";
+```
+
+O operador `+` concatena strings.
+
+Se a string for somente numérica, pode-se usar operadores matemáticos, mas o tipo passar a ser number:
+
+```js
+var numero = "5";
+typeof numero; // string
+numero *= 2; // numero = 10
+typeof numero; // number
+
+var str = "abc" * 2; // str = NaN
+```
+
+Para forçar uma mudança de tipo:\
+`parseInt(var)` converte para inteiro por truncamento, tipo `number`
+
+```js
+var a = "5.5"; // "5.5"
+typeof a; // string
+a = parseInt(a); // 5
+typeof a; // number
+```
+
+`parseFloat(var)` converte para float, tipo `number`
+
+```js
+var a = "5.5"; // "5.5"
+typeof a; // string
+a = parseFloat(a); // 5.5
+typeof a; // number
+```
+
+`Number(var)` converte para tipo `number`
 
 <br>
 
