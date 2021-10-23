@@ -1298,7 +1298,7 @@ const a = 2 // Erro: Uncaught SyntaxError: Identifier 'a' has already been decla
 
 Contudo, pode ser modificada.
 
-- Se for uma array, por exemplo, seu conteúdo pode mudar, mas não pode deixar de ser uma array.
+- Se for uma array, por exemplo, seu conteúdo pode mudar, mas não pode deixar de ser uma array nem ser atribuída outra array.
 ```js
 const a = [1]
 a[0] = 2
