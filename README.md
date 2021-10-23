@@ -629,6 +629,18 @@ typeof a; // number
 
 - #### **Alert e Prompt**
 
+`alert("mensagem")`\
+Cria um popup com a "mensagem" e um botão "ok".
+
+`prompt("mensagem")`\
+Cria um popup com um campo para receber input.
+
+```js
+var nome = prompt("Qual o seu nome?")
+alert("Bom dia, " + nome + " :)")
+```
+Os dados recebidos por `prompt` são do tipo `string`.
+
 <br>
 
 - #### **Condicionais - IF**
