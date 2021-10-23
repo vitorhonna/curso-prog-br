@@ -573,6 +573,13 @@ console.log(a === 3); // False
 
 - #### **Operadores lógicos**
 
+| Operator | Usage   |
+| -------- | ------- |
+| `&&`     | E       |
+| `||`     | OU      |
+| `!`      | Negação |
+
+
 <br>
 
 - #### **Strings**
