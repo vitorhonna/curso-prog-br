@@ -243,8 +243,12 @@ selector {
   transform: translateY(-50%);
   /* Translada o elemento -50% de seu tamanho, nesse caso a altura da linha, dessa forma o centro da linha fica alinhado com o centro do elemento pai */
 }
+```
 
-paracentralizarumelemento: selector {
+Para centralizar um elemento:
+
+```css
+selector {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -636,81 +640,694 @@ Cria um popup com a "mensagem" e um botão "ok".
 Cria um popup com um campo para receber input.
 
 ```js
-var nome = prompt("Qual o seu nome?")
-alert("Bom dia, " + nome + " :)")
+var nome = prompt("Qual o seu nome?");
+alert("Bom dia, " + nome + " :)");
 ```
+
 Os dados recebidos por `prompt` são do tipo `string`.
 
 <br>
 
 - #### **Condicionais - IF**
 
+Sintaxe:
+
+```js
+if (/*teste lógico*/) {
+  // executa se o true
+}
+else if {
+  // executa se o anterior é false
+}
+else {
+  // executa se o anterior é false
+}
+```
+
+Exemplo:
+
+```js
+var idade = 20;
+
+if (idade >= 35) {
+  console.log("Pode comprar");
+  console.log("Qual o seu pedido?");
+} else if (idade >= 18) {
+  console.log("Pode comprar");
+  console.log("Mostre seu documento de identidade");
+} else {
+  console.log("Não pode comprar");
+  console.log("Volte futuramente");
+}
+```
+
 <br>
 
 - #### **Operador Ternário**
+
+Recomendado para testes simples em uma única linha.
+
+Sintaxe:
+
+```js
+var a = /*(teste lógico)*/ ? /*(executa se true)*/ : /*(executa se false)*/
+```
+
+Exemplo: verificar se maior de idade
+
+```js
+var idade = 15;
+
+idade >= 18 ? console.log("Sim") : console.log("Não");
+
+// Equivalente a:
+var resposta = idade >= 18 ? "Sim" : "Não";
+console.log(resposta);
+
+// Equivalente a:
+if (idade >= 18) {
+  console.log("Sim");
+} else {
+  console.log("Não");
+}
+```
+
+Exemplo: multiplicar por 2 se menor que 5, senão multiplicar por 10
+
+```js
+var numero = 1;
+
+var resultado = numero < 5 ? numero * 2 : numero * 10;
+
+// Equivalente a:
+if (numero < 5) {
+  resultado = numero * 2;
+} else {
+  resultado = numero * 10;
+}
+```
 
 <br>
 
 - #### **Condicionais - Switch**
 
+Usado para comparar um valor com diversas referências.
+
+Sintaxe:
+
+```js
+switch (valor) {
+  case referencia1:
+    // executa se valor == referencia1
+    break;
+
+  case referencia2:
+    // executa se valor == referencia2
+    break;
+
+  case referencia2:
+    // executa se valor == referencia2
+    break;
+
+  default:
+    // executa se não entrar em nenhum caso anterior
+    break;
+}
+```
+
+Exemplo: organização de fila de embarque
+
+```js
+var tipoPassagem = "VIP";
+
+switch (tipoPassagem) {
+  case "VIP":
+    console.log("Vá para a fila prioritária");
+    break;
+
+  case "Comum":
+    console.log("Vá para a fila comum");
+    break;
+
+  default:
+    console.log("Você não pode embarcar");
+    break;
+}
+```
+
 <br>
 
 - #### **Repetição - FOR e WHILE**
+
+Sintaxe `for`:
+
+```js
+for (var i = 0; i < 5; i++) {
+  console.log(i); // imprime 0, 1, 2, 3, 4
+}
+
+console.log("i = " + i); // i = 5
+```
+
+Pode-se limitar o escopo do contador `i` declarando com `let`:
+
+```js
+for (let i = 0; i < 5; i++) {
+  console.log(i); // imprime 0, 1, 2, 3, 4
+}
+
+console.log("i = " + i); // Erro "Uncaught ReferenceError: i is not defined"
+```
+
+Sintaxe `while`:
+
+```js
+var i = 0;
+while (i < 5) {
+  console.log(i); // imprime 0, 1, 2, 3, 4
+  i++;
+}
+
+console.log("i = " + i); // i = 5
+```
 
 <br>
 
 - #### **Arrays**
 
+Lista de elementos separados por vírgula.
+
+```js
+var letras = new Array("A", "B", "C", "D", "E");
+var letras = ["A", "B", "C", "D", "E"];
+
+console.log(letras[0]); // "A"
+console.log(letras[1]); // "B"
+console.log(letras[2]); // "C"
+```
+
+Acessando valores com `for` (3 formas):
+
+```js
+var letras = ["A", "B", "C", "D", "E"];
+
+for (let i = 0; i < letras.length; i++) {
+  console.log(letras[i]); // imprime todos os itens
+}
+
+// Ou (pegando os índices)
+
+for (let i in letras) {
+  console.log(letras[i]); // imprime todos os itens, i recebe os índices
+}
+
+// Ou (pegando os itens)
+
+for (let letra of letras) {
+  console.log(letra); // imprime todos os itens, letra recebe o item
+}
+```
+
 <br>
 
 - #### **Funções**
 
+Sintaxe:
+
+```js
+function nomeDaFuncao(argumentos) {
+  //Comandos
+  return; //valor
+}
+// receber argumentos e retornar valores é opcional
+```
+
+Exemplo: cálculo de média
+
+```js
+function media(nota1, nota2) {
+  let media = (nota1 + nota2) / 2;
+  return media;
+}
+
+var resultado = media(10, 5);
+console.log(resultado); // 7.5
+```
+
+É possível atribuir a própria função, passando seu nome, a uma outra variável, que passará a ser utilizável como função:
+
+```js
+function media(nota1, nota2) {
+  return (nota1 + nota2) / 2;
+}
+
+console.log(media(10, 5)); // 7.5
+
+m = media; // 'm' recebe a função 'media'
+
+console.log(m(10, 2)); // 6
+```
+
 <br>
 
-- #### **Funções parte 2**
+**Função anônima**
+
+Sintaxe:
+
+```js
+var nomeDaFuncao = function (argumentos) {
+  //Comandos
+  return; //valor
+};
+```
+
+Exemplo:
+
+```js
+var media = function (nota1, nota2) {
+  return (nota1 + nota2) / 2;
+};
+```
 
 <br>
 
-- #### **Juntando tudo até aqui.**
+**Função de seta / arrow function**
+
+Sintaxe:
+
+```js
+var nomeDaFuncao = (argumentos) => {
+  //Comandos
+  return; //valor
+};
+```
+
+Exemplo:
+
+```js
+var media = (nota1, nota2) => {
+  return (nota1 + nota2) / 2;
+};
+```
 
 <br>
 
 - #### **Objetos - Propriedades**
 
+São conjuntos de _propriedades_ separadas por vírgula.
+
+As propriedades podem ser variáveis de qualquer tipo, com uma chave e um valor separados por dois pontos (:).
+
+Um objeto também pode ser uma propriedade de outro objeto.
+
+São parecidos com dicionários de python.
+
+Sintaxe:
+
+```js
+// Declaração:
+var nomeObjeto = new Object()
+// ou
+var nomeObjeto = new Object({
+  chave1: valor1
+  chave2: valor2
+})
+// ou
+var nomeObjeto = {
+  chave1: valor1
+  chave2: valor2
+}
+
+// Acessar valores:
+nomeObjeto.chave1 // retorna 'valor1'
+nomeObjeto["chave1"] // retorna 'valor1'
+
+// Adicionar propriedades:
+nomeObjeto.chave3 = valor3
+nomeObjeto["chave4"] = valor4
+```
+
+Exemplo:
+
+```js
+var aluno = {
+  nome: "Igor",
+  nota1: 7.5,
+};
+
+console.log(aluno.nome + " tirou " + aluno.nota1 + " na prova");
+// Igor tirou 7.5 na prova
+
+console.log(aluno["nome"] + " tirou " + aluno["nota1"] + " na prova");
+// Igor tirou 7.5 na prova
+```
+
+Objetos como parâmetros:
+
+```js
+var aluno1 = {
+  nome: "Igor",
+  nota: 7.5,
+};
+
+var aluno2 = {
+  nome: "Pedro",
+  nota: 5.5,
+};
+
+var aluno3 = {
+  nome: "Maria",
+  nota: 9.5,
+};
+
+var alunos = { aluno1, aluno2, aluno3 };
+
+console.log(alunos);
+
+/*
+
+{
+  {
+  nome: "Igor",
+  nota: 7.5
+  },
+
+  {
+  nome: "Pedro",
+  nota: 5.5
+  },
+  
+  {
+  nome: "Maria",
+  nota: 9.5
+  }
+}
+
+*/
+```
+
 <br>
 
 - #### **Objetos - Métodos**
 
+Um objeto também pode conter funções, que são chamadas de métodos.
+
+Os métodos podem ser funções definidas dentro ou fora do objeto.
+
+```js
+var aluno = {
+  nome: "Igor",
+  notas: [6, 7],
+
+  media: function (n1, n2) {
+    return (n1 + n2) / 2;
+  },
+};
+
+// 'media' é um método de 'aluno'
+console.log(aluno.media(aluno.notas[0], aluno.notas[1])); // 6.5
+```
+
+```js
+function calcMedia(n1, n2) {
+  return (n1 + n2) / 2;
+}
+
+var aluno = {
+  nome: "Igor",
+  notas: [6, 7],
+
+  media: calcMedia,
+};
+
+// 'media' é um método de 'aluno'
+console.log(aluno.media(aluno.notas[0], aluno.notas[1])); // 6.5
+```
+
 <br>
 
-- #### **Objetos - Construtores**
+`this`\
+Referencia o objeto internamente:
+
+```js
+var aluno = {
+  nome: "Igor",
+  notas: [6, 7],
+
+  media: function () {
+    return (this.notas[0] + this.notas[1]) / 2;
+  },
+};
+
+// 'media' é um método de 'aluno'
+console.log(aluno.media()); // 6.5
+```
+
+O método também pode ser definido externamente:
+
+```js
+function calcMedia() {
+  return (this.notas[0] + this.notas[1]) / 2;
+}
+
+var aluno = {
+  nome: "Igor",
+  notas: [6, 7],
+
+  media: calcMedia,
+};
+
+// 'media' é um método de 'aluno'
+console.log(aluno.media()); // 6.5
+```
 
 <br>
 
-- #### **Objetos - Resumo**
+- #### **Objetos - <s>Bob o</s> Construtor**
+
+Funções para criar objetos de maneira mais fácil e estruturada, além de evitar erros de digitação.
+
+```js
+function criarAluno(nomeAluno, nota1, nota2) {
+  let aluno = {
+    nome: nomeAluno,
+    notas: [nota1, nota2],
+    media: function () {
+      return (this.notas[0] + this.notas[1]) / 2;
+    },
+  };
+
+  return aluno;
+}
+
+var turma = [
+  criarAluno("Igor", 9, 6),
+  criarAluno("João", 6, 7),
+  criarAluno("Maria", 5, 10),
+];
+
+console.log(turma[1].media()); // 6.5 (média do João)
+```
+
+Funções também são objetos. Elas são usadas como `Construtores` para criar outros objetos com uma certa estrutura:
+
+```js
+// Objeto tipo 'aluno'
+function aluno(nome, nota1, nota2) {
+  this.nome = nome;
+  this.nota = new Array();
+  this.nota[0] = nota1;
+  this.nota[1] = nota2;
+
+  this.media = function () {
+    return (this.nota[0] + this.nota[1]) / 2;
+  };
+}
+
+// Criando objetos (instanciar)
+var aluno1 = new aluno("Igor", 8, 7);
+var aluno2 = new aluno("João", 6, 7);
+// 'aluno1' e 'aluno2' são instâncias de 'aluno'
+
+console.log(aluno1);
+console.log(aluno2);
+```
+
+<br>
+
+`forEach()`\
+Método do objeto `Array`, recebe uma função cujo parâmetro será cada elemento do array. Semelhante a um loop for.
+
+Sintaxe:
+
+```js
+objeto.forEach((elemento, index, array) => {
+  // função
+}, thisArg);
+// 'thisArg' será o valor usado por 'this' na função, é opcional, assim como receber o index e o array
+```
+
+Exemplo:
+
+```js
+var alunos = ["Igor", "João", "Maria"];
+
+alunos.forEach(function (elemento) {
+  console.log(elemento); // Imprime Igor, João, Maria
+});
+
+// Usando função de seta:
+alunos.forEach((elemento) => {
+  console.log(elemento); // Imprime Igor, João, Maria
+});
+
+// Usando mais parâmetros:
+alunos.forEach((elemento, index, array) => {
+  console.log(elemento, index, array);
+});
+/* Imprime:
+Igor 0 ["Igor", "João", "Maria"]
+João 1 ["Igor", "João", "Maria"]
+Maria 2 ["Igor", "João", "Maria"]
+*/
+
+// A função que forEach recebe pode ser qualquer função, ela é aplicada a todos os elementos da array
+var numeros = [1, 2, 3];
+
+function dobro(num, i, arr) {
+  arr[i] = num * 2;
+}
+
+console.log(numeros); // [1, 2, 3]
+numeros.forEach(dobro);
+console.log(numeros); // [2, 4, 6]
+```
 
 <br>
 
 - #### **Datas**
 
+Datas são objetos em JS.
+
+```js
+var d = new Date(); // Data atual
+console.log(d);
+// Sat Oct 23 2021 18:26:11 GMT-0300 (Brasilia Standard Time)
+```
+
+É possível declarar manualmente. Atenção: valor passado para o mês é um índice numa array que vai de 0 (Jan) a 11 (Dez)!!
+
+Sintaxe:
+
+```js
+// Data atual
+new Date();
+
+// String de data
+new Date("dateString");
+
+// Parâmetros
+new Date(year, monthIndex, day, hours, minutes, seconds, milliseconds);
+
+// Se apenas um parâmetro for passado, será considerado milissegundos
+new Date(milliseconds);
+
+// Timestamp
+const d = new Date();
+let timestamp = d.getTime();
+```
+
+Exemplos:
+
+```js
+var d = new Date(2021, 09, 23);
+console.log(d);
+// Sat Oct 23 2021 00:00:00 GMT-0300 (Brasilia Standard Time)
+
+var d = new Date(0);
+// Wed Dec 31 1969 21:00:00 GMT-0300 (Brasilia Standard Time) [epoch]
+
+var d = new Date("12 24 2021 14:00");
+// Fri Dec 24 2021 14:00:00 GMT-0300 (Brasilia Standard Time)
+```
+
+Datas têm métodos específicos, mais informações:
+
+- [Date Objects](https://www.w3schools.com/js/js_dates.asp)
+- [Date Formats](https://www.w3schools.com/js/js_date_formats.asp)
+- [Date Get Methods](https://www.w3schools.com/js/js_date_methods.asp)
+- [Date Set Methods](https://www.w3schools.com/js/js_date_methods_set.asp)
+
 <br>
 
-- #### **Const, Let e Var**
+- #### **Var, Let e Const**
+
+Palavras reservadas para declarar variáveis.
+
+**`var`**: tem escopo global, dentro e fora de blocos (como `if`s, por ex).
+
+**`let`**: tem escopo local, só existe dentro do bloco onde foi declarada (como um `if`, por ex).
+
+```js
+var a = 1
+let b = 2
+console.log(a) // 1
+console.log(b) // 2
+
+{
+  var c = 3
+  let d = 4
+}
+console.log(c) // 3
+console.log(d) // Erro: Uncaught ReferenceError: d is not defined
+```
+
+**`const`**: tem escopo local e valor constante.
+
+Não pode ter seu valor reatribuído: 
+```js
+const a = 1
+a = 2 // Erro: Uncaught TypeError: Assignment to constant variable.
+```
+
+Não pode ser redeclarada:
+```js
+const a = 1
+const a = 2 // Erro: Uncaught SyntaxError: Identifier 'a' has already been declared
+```
+
+Contudo, pode ser modificada.
+
+- Se for uma array, por exemplo, seu conteúdo pode mudar, mas não pode deixar de ser uma array.
+```js
+const a = [1]
+a[0] = 2
+console.log(a) // [2]
+
+const b = [3]
+b[1] = 4
+console.log(b) // [3, 4]
+
+const c = [5]
+c = [6]       // Erro: Uncaught TypeError: Assignment to constant variable.
+```
+
+**Atenção:** funções têm escopo restrito, uma variável declarada com `var` dentro de uma função não estará disponível fora da função.
 
 <br>
 <br>
 
 ## Design Resources
 
-[Pinterest](https://www.pinterest.com)\
-[Behance](https://www.behance.net)\
-[freepik](https://www.freepik.com)\
-[streamline icons](https://ego.streamlineicons.com/)\
-[steamline hq](https://streamlinehq.com/)\
-[envato](https://envato.com/)\
-[unsplash](https://unsplash.com/)\
-[flaticon](https://www.flaticon.com/)
-[pexels](https://www.pexels.com/)
+- [Pinterest](https://www.pinterest.com)
+- [Behance](https://www.behance.net)
+- [freepik](https://www.freepik.com)
+- [streamline icons](https://egostreamlineicons.com/)
+- [steamline hq](https://streamlinehq.com/)
+- [envato](https://envato.com/)
+- [unsplash](https://unsplash.com/)
+- [flaticon](https://www.flaticon.com/)
+- [pexels](https://www.pexels.com/)
 
 <br>
 <br>
