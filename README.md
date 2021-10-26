@@ -15,6 +15,7 @@
 - [Módulo 4: CSS Intermediário](https://github.com/vitorhonna/cursoProgramadorBR#módulo-4-css-intermediário)
 - [Módulo 5: HTML Intermediário](https://github.com/vitorhonna/cursoProgramadorBR#módulo-5-html-intermediário)
 - [Módulo 8: Javascript Básico](https://github.com/vitorhonna/cursoProgramadorBR#módulo-8-javascript-básico)
+- [Módulo 9: Javascript Intermediário](https://github.com/vitorhonna/cursoProgramadorBR#módulo-9-javascript-intermediário)
 
 ## Anotações
 
@@ -1269,47 +1270,50 @@ Palavras reservadas para declarar variáveis.
 **`let`**: tem escopo local, só existe dentro do bloco onde foi declarada (como um `if`, por ex).
 
 ```js
-var a = 1
-let b = 2
-console.log(a) // 1
-console.log(b) // 2
+var a = 1;
+let b = 2;
+console.log(a); // 1
+console.log(b); // 2
 
 {
-  var c = 3
-  let d = 4
+  var c = 3;
+  let d = 4;
 }
-console.log(c) // 3
-console.log(d) // Erro: Uncaught ReferenceError: d is not defined
+console.log(c); // 3
+console.log(d); // Erro: Uncaught ReferenceError: d is not defined
 ```
 
 **`const`**: tem escopo local e valor constante.
 
-Não pode ter seu valor reatribuído: 
+Não pode ter seu valor reatribuído:
+
 ```js
-const a = 1
-a = 2 // Erro: Uncaught TypeError: Assignment to constant variable.
+const a = 1;
+a = 2; // Erro: Uncaught TypeError: Assignment to constant variable.
 ```
 
 Não pode ser redeclarada:
+
 ```js
-const a = 1
-const a = 2 // Erro: Uncaught SyntaxError: Identifier 'a' has already been declared
+const a = 1;
+const a = 2; // Erro: Uncaught SyntaxError: Identifier 'a' has already been declared
 ```
 
 Contudo, pode ser modificada.
 
 - Se for uma array, por exemplo, seu conteúdo pode mudar, mas não pode deixar de ser uma array nem ser atribuída outra array.
+
 ```js
-const a = [1]
-a[0] = 2
-console.log(a) // [2]
+const a = [1];
+a[0] = 2;
+console.log(a); // [2]
 
-const b = [3]
-b[1] = 4
-console.log(b) // [3, 4]
+const b = [3];
+b[1] = 4;
+console.log(b); // [3, 4]
 
-const c = [5]
-c = [6]       // Erro: Uncaught TypeError: Assignment to constant variable.
+const c = [5];
+c = [6]; // Erro: Uncaught TypeError: Assignment to constant variable.
 ```
 
 **Atenção:** funções têm escopo restrito, uma variável declarada com `var` dentro de uma função não estará disponível fora da função.
@@ -1317,6 +1321,97 @@ c = [6]       // Erro: Uncaught TypeError: Assignment to constant variable.
 <br>
 <br>
 
+### Módulo 9: Javascript Intermediário
+
+- #### **Window**
+
+
+
+<br>
+
+- #### **Document**
+
+
+
+<br>
+
+- #### **Acessando elementos HTML com JS**
+
+
+
+<br>
+
+- #### **Modificando elementos**
+
+
+
+<br>
+
+- #### **Eventos (DOM Events)**
+
+
+
+<br>
+
+- #### **O que é o This?**
+
+
+
+<br>
+
+- #### **Tirando dúvida sobre o lance dos parênteses nas funções**
+
+
+
+<br>
+
+- #### **Comparando as maneiras de criar um evento**
+
+
+
+<br>
+
+- #### **Elementos pai e filhos**
+
+
+
+<br>
+
+- #### **Biblioteca Math**
+
+
+
+<br>
+
+- #### **JSON**
+
+
+
+<br>
+
+- #### **Local Storage - Persistência de dados**
+
+
+
+<br>
+
+- #### **Criando uma página para sorteio**
+
+
+
+<br>
+
+- #### **Timer e Intervalo**
+
+
+
+<br>
+
+
+<br>
+<br>
+
+---
 ## Design Resources
 
 - [Pinterest](https://www.pinterest.com)
