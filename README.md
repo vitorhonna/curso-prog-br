@@ -502,11 +502,13 @@ console.log(a);
 
 - #### **Tipos de dados**
 
-`Boolean`: True ou False\
- `Null`: variável vazia\
- `Undefined`: retorno de variáveis não inicializadas\
- `Number`: número, console mostra em azul\
- `String`: sequência de caracteres, console mostra em preto
+`Boolean` : True ou False\
+`Null` : variável vazia\
+`Undefined` : retorno de variáveis não inicializadas\
+`Number` : número, console mostra em azul\
+`"String"` : sequência de caracteres, console mostra em preto\
+`{Object}` : dado estruturado, tem propriedades (atributos) e funcionalidades (métodos)\
+`[Array]` : lista, agrupamento de dados
 
 <br>
 
@@ -1265,7 +1267,7 @@ Datas têm métodos específicos, mais informações:
 
 Palavras reservadas para declarar variáveis.
 
-**`var`**: tem escopo global, dentro e fora de blocos (como `if`s, por ex).
+**`var`**: tem escopo global, dentro e fora de blocos (como `if`s, por ex), hoisting (declara a variável, mas não atribui valor).
 
 **`let`**: tem escopo local, só existe dentro do bloco onde foi declarada (como um `if`, por ex).
 
@@ -1325,93 +1327,65 @@ c = [6]; // Erro: Uncaught TypeError: Assignment to constant variable.
 
 - #### **Window**
 
-
-
 <br>
 
 - #### **Document**
-
-
 
 <br>
 
 - #### **Acessando elementos HTML com JS**
 
-
-
 <br>
 
 - #### **Modificando elementos**
-
-
 
 <br>
 
 - #### **Eventos (DOM Events)**
 
-
-
 <br>
 
 - #### **O que é o This?**
-
-
 
 <br>
 
 - #### **Tirando dúvida sobre o lance dos parênteses nas funções**
 
-
-
 <br>
 
 - #### **Comparando as maneiras de criar um evento**
-
-
 
 <br>
 
 - #### **Elementos pai e filhos**
 
-
-
 <br>
 
 - #### **Biblioteca Math**
-
-
 
 <br>
 
 - #### **JSON**
 
-
-
 <br>
 
 - #### **Local Storage - Persistência de dados**
-
-
 
 <br>
 
 - #### **Criando uma página para sorteio**
 
-
-
 <br>
 
 - #### **Timer e Intervalo**
 
-
-
 <br>
-
 
 <br>
 <br>
 
 ---
+
 ## Design Resources
 
 - [Pinterest](https://www.pinterest.com)
