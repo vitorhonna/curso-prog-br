@@ -858,11 +858,14 @@ for (let letra of letras) {
 Sintaxe:
 
 ```js
-function nomeDaFuncao(argumentos) {
+function nomeDaFuncao(parâmetros) {
   //Comandos
   return; //valor
 }
-// receber argumentos e retornar valores é opcional
+// receber parâmetros e retornar valores é opcional
+
+nomeDaFuncao(argumentos)
+// os argumentos correspondem aos parâmetros da função quando ela está sendo invocada
 ```
 
 Exemplo: cálculo de média
@@ -898,7 +901,7 @@ console.log(m(10, 2)); // 6
 Sintaxe:
 
 ```js
-var nomeDaFuncao = function (argumentos) {
+var nomeDaFuncao = function (parâmetros) {
   //Comandos
   return; //valor
 };
@@ -919,7 +922,7 @@ var media = function (nota1, nota2) {
 Sintaxe:
 
 ```js
-var nomeDaFuncao = (argumentos) => {
+var nomeDaFuncao = (parâmetros) => {
   //Comandos
   return; //valor
 };
@@ -985,7 +988,7 @@ console.log(aluno["nome"] + " tirou " + aluno["nota1"] + " na prova");
 // Igor tirou 7.5 na prova
 ```
 
-Objetos como parâmetros:
+Objetos como argumentos:
 
 ```js
 var aluno1 = {
@@ -1184,7 +1187,7 @@ alunos.forEach((elemento) => {
   console.log(elemento); // Imprime Igor, João, Maria
 });
 
-// Usando mais parâmetros:
+// Usando mais argumentos:
 alunos.forEach((elemento, index, array) => {
   console.log(elemento, index, array);
 });
@@ -1229,7 +1232,7 @@ new Date();
 // String de data
 new Date("dateString");
 
-// Parâmetros
+// Argumentos
 new Date(year, monthIndex, day, hours, minutes, seconds, milliseconds);
 
 // Se apenas um parâmetro for passado, será considerado milissegundos
