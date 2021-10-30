@@ -855,6 +855,8 @@ for (let letra of letras) {
 
 - #### **Funções**
 
+Funções nomeadas estão sujeitas a *hoisting*.
+
 Sintaxe:
 
 ```js
@@ -896,7 +898,36 @@ console.log(m(10, 2)); // 6
 
 <br>
 
+**ATENÇÃO: Variáveis em Funções**
+
+Se uma variável for declarada em uma função SEM utilizar palavras reservadas (`var`, `let`, `const`), ela passar a ter ESCOPO GLOBAL:
+
+```js
+function soma(n1,n2) {
+  total = n1+n2
+}
+
+soma(1,5)
+console.log(total) // 6, notar que 'total' foi declarada dentro da função e está sendo utilizada fora
+```
+
+Se uma variável é declarada dentro da função com QUALQUER palavra reservada, seu escopo é limitado ao escopo da função!
+
+```js
+function soma(n1,n2) {
+  var total = n1+n2 // poderia ser let ou const
+}
+
+soma(1,5)
+console.log(total) // ReferenceError: total is not defined
+                   // Notar que 'total', mesmo declarada com 'var', não sai do escopo da função
+```
+
+<br>
+
 **Função anônima**
+
+Funções anônimas não estão sujeitas a *hoisting*.
 
 Sintaxe:
 
@@ -935,6 +966,32 @@ var media = (nota1, nota2) => {
   return (nota1 + nota2) / 2;
 };
 ```
+
+<br>
+
+**Função de callback / callback function**
+
+Quando uma função é passada como parâmetro de outra função, ela pode ser executada como uma callback function.
+
+```js
+function foo(callbackFunction) {
+  console.log("Before callback function")
+
+  callbackFunction()
+
+  console.log("After callback function")
+}
+
+foo(
+  () => {
+    console.log("I'm inside a callback function! :)")
+  }
+)
+
+// Before callback function
+// I'm inside a callback function! :)
+// After callback function
+``` 
 
 <br>
 
@@ -1321,7 +1378,7 @@ const c = [5];
 c = [6]; // Erro: Uncaught TypeError: Assignment to constant variable.
 ```
 
-**Atenção:** funções têm escopo restrito, uma variável declarada com `var` dentro de uma função não estará disponível fora da função.
+**ATENÇÃO:** Funções têm escopo restrito, uma variável declarada com `var` dentro de uma função não estará disponível fora da função.
 
 <br>
 <br>
