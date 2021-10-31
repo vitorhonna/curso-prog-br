@@ -519,6 +519,7 @@ console.log(a);
 `*`: Multiplicação\
 `/`: Divisão\
 `%`: Módulo (resto de divisão)\
+`**`: Exponencial\
 `++`: Incremento\
 `--`: Decremento
 
@@ -555,16 +556,16 @@ console.log("b = " + b); // b = 30 <<<
 
 - #### **Operadores comparativos**
 
-| Operator | Usage                   |
-| -------- | ----------------------- |
-| `==`     | igual                   |
-| `===`    | idêntico (valor e tipo) |
-| `!=`     | diferente               |
-| `!==`    | valor e tipo diferentes |
-| `>`      | maior                   |
-| `<`      | menor                   |
-| `>=`     | maior ou igual          |
-| `<=`     | menor ou igual          |
+| Operator | Usage                                            |
+| -------- | ------------------------------------------------ |
+| `==`     | igual                                            |
+| `===`    | idêntico / estritamente igual (valor e tipo)     |
+| `!=`     | diferente                                        |
+| `!==`    | estritamente diferente (valor e tipo diferentes) |
+| `>`      | maior                                            |
+| `<`      | menor                                            |
+| `>=`     | maior ou igual                                   |
+| `<=`     | menor ou igual                                   |
 
 Exemplo de uso:
 
@@ -855,7 +856,7 @@ for (let letra of letras) {
 
 - #### **Funções**
 
-Funções nomeadas estão sujeitas a *hoisting*.
+Funções nomeadas estão sujeitas a _hoisting_.
 
 Sintaxe:
 
@@ -866,7 +867,7 @@ function nomeDaFuncao(parâmetros) {
 }
 // receber parâmetros e retornar valores é opcional
 
-nomeDaFuncao(argumentos)
+nomeDaFuncao(argumentos);
 // os argumentos correspondem aos parâmetros da função quando ela está sendo invocada
 ```
 
@@ -903,31 +904,31 @@ console.log(m(10, 2)); // 6
 Se uma variável for declarada em uma função SEM utilizar palavras reservadas (`var`, `let`, `const`), ela passar a ter ESCOPO GLOBAL:
 
 ```js
-function soma(n1,n2) {
-  total = n1+n2
+function soma(n1, n2) {
+  total = n1 + n2;
 }
 
-soma(1,5)
-console.log(total) // 6, notar que 'total' foi declarada dentro da função e está sendo utilizada fora
+soma(1, 5);
+console.log(total); // 6, notar que 'total' foi declarada dentro da função e está sendo utilizada fora
 ```
 
 Se uma variável é declarada dentro da função com QUALQUER palavra reservada, seu escopo é limitado ao escopo da função!
 
 ```js
-function soma(n1,n2) {
-  var total = n1+n2 // poderia ser let ou const
+function soma(n1, n2) {
+  var total = n1 + n2; // poderia ser let ou const
 }
 
-soma(1,5)
-console.log(total) // ReferenceError: total is not defined
-                   // Notar que 'total', mesmo declarada com 'var', não sai do escopo da função
+soma(1, 5);
+console.log(total); // ReferenceError: total is not defined
+// Notar que 'total', mesmo declarada com 'var', não sai do escopo da função
 ```
 
 <br>
 
 **Função anônima**
 
-Funções anônimas não estão sujeitas a *hoisting*.
+Funções anônimas não estão sujeitas a _hoisting_.
 
 Sintaxe:
 
@@ -975,23 +976,21 @@ Quando uma função é passada como parâmetro de outra função, ela pode ser e
 
 ```js
 function foo(callbackFunction) {
-  console.log("Before callback function")
+  console.log("Before callback function");
 
-  callbackFunction()
+  callbackFunction();
 
-  console.log("After callback function")
+  console.log("After callback function");
 }
 
-foo(
-  () => {
-    console.log("I'm inside a callback function! :)")
-  }
-)
+foo(() => {
+  console.log("I'm inside a callback function! :)");
+});
 
 // Before callback function
 // I'm inside a callback function! :)
 // After callback function
-``` 
+```
 
 <br>
 
@@ -1030,6 +1029,12 @@ nomeObjeto.chave3 = valor3
 nomeObjeto["chave4"] = valor4
 ```
 
+Deletar uma propriedade de um objeto:
+
+```js
+delete nomeObjeto.chave
+```
+
 Exemplo:
 
 ```js
@@ -1043,6 +1048,13 @@ console.log(aluno.nome + " tirou " + aluno.nota1 + " na prova");
 
 console.log(aluno["nome"] + " tirou " + aluno["nota1"] + " na prova");
 // Igor tirou 7.5 na prova
+
+delete aluno.nota1
+
+console.log(aluno)
+// aluno = {
+//   nome: "Igor"
+// }
 ```
 
 Objetos como argumentos:
