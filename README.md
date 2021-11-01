@@ -1032,7 +1032,7 @@ nomeObjeto["chave4"] = valor4
 Deletar uma propriedade de um objeto:
 
 ```js
-delete nomeObjeto.chave
+delete nomeObjeto.chave;
 ```
 
 Exemplo:
@@ -1049,9 +1049,9 @@ console.log(aluno.nome + " tirou " + aluno.nota1 + " na prova");
 console.log(aluno["nome"] + " tirou " + aluno["nota1"] + " na prova");
 // Igor tirou 7.5 na prova
 
-delete aluno.nota1
+delete aluno.nota1;
 
-console.log(aluno)
+console.log(aluno);
 // aluno = {
 //   nome: "Igor"
 // }
@@ -1399,22 +1399,137 @@ c = [6]; // Erro: Uncaught TypeError: Assignment to constant variable.
 
 - #### **Window**
 
+Objeto padrão de páginas da web, contém muitas propriedades, como o `console`.
+
+Por ser o objeto padrão, não é necessário mencioná-lo:
+
+```js
+window.console.log("hello, js"); // hello, js
+console.log("hello, js"); // hello, js
+```
+
 <br>
 
-- #### **Document**
+- #### **Document / Documento Object Model (DOM)**
+
+`document` é uma propriedade do objeto `window`, com ele é possível acessar o DOM.\
+As tags `head` e `body`, filhas de `html`, são objetos que podem ser acessados como uma propriedade de `document`:\
+`document.head` e `document.body`
 
 <br>
 
 - #### **Acessando elementos HTML com JS**
 
+\- Usando um `id`: `document.getElementById`\
+\- Usando uma `class`: `document.getElementsByClassName`\
+\- Usando a `tag` html: `document.getElementsByTagName`
+
+Também é possível usar os seletores CSS:\
+\- `.querySelector("#id")`\
+\- `.querySelector(".class")`\
+\- `.querySelector("name")`\
+\- ...
+
 <br>
 
 - #### **Modificando elementos**
+
+Obter e modificar o conteúdo de um elemento:
+
+\- `.innerHTML`: recebe html e interpreta, retorna o conteúdo total, incluindo as tags.\
+\- `.innerText`: recebe texto simples, retorna somente o texto visível que a tag contém.\
+\- `.textContent`: recebe texto simples, retorna todo o texto que a tag contém, mesmo que algo esteja sendo escondido da visualização por meio de CSS, porém sem as tags.
+
+```css
+span {
+  display: none;
+}
+```
+
+```html
+<p class="paragrafoTeste">paragrafo teste <span>texto oculto com css</span></p>
+```
+
+```js
+let p = document.querySelector(".paragrafoTeste");
+console.log(p.innerHTML); // retorna: "paragrafo teste <span>texto oculto com css</span>"
+console.log(p.textContent); // retorna: "paragrafo teste texto oculto com css"
+console.log(p.innerText); // retorna: "paragrafo teste"
+```
+
+Modificando **atributos clássicos** (ex: classes, style, etc):
+
+\- Classes: `.className`
+
+```js
+let p = document.querySelector(".paragrafoTeste");
+p.className = "newClassName";
+```
+
+\- Style: `.style`
+
+```js
+let p = document.querySelector(".paragrafoTeste");
+p.style = "color: blue";
+```
+
+Modificando **atributos personalizados**:
+
+```html
+<p meuAtt="nomeDoMeuAtributo">Texto</p>
+```
+
+```js
+let p = document.querySelector(".paragrafoTeste");
+p.getAttribute("meuAtt"); // retorna: "nomeDoMeuAtributo"
+p.setAttribute("meuAtt", "novoNome");
+```
+
+`.setAttribute` também serve para criar um novo atributo personalizado.
 
 <br>
 
 - #### **Eventos (DOM Events)**
 
+Eventos podem ser adicionado a tags como atributos. Eles podem modificar elementos,
+chamar funções, aplicar estilos, etc.\
+Exemplos de eventos: 
+
+\- `onclick="funcao"` : Executa uma função quando clicado.\
+\- `onchange="funcao"` : Colocado em uma tag `input`, executa quando o campo de texto perde o foco.\
+\- `oninput="funcao"` : Colocado em uma tag `input`, executa conforme o texto é digitado.\
+\- `onload="funcao"` : Colocado na tag `body`, executa depois que toda a página for carregada.\
+\- `onmouseover="funcao"` : Executa quando o cursor passar sobre o elemento
+\- `onmouseout="funcao"` : Executa quando o cursor deixar o elemento.
+
+<br>
+
+Também é possível alterar os efeitos dos eventos no próprio JS, basta acessar o evento por meio
+de notação de ponto:
+
+```js
+let div = document.querySelector(".divTeste");
+
+div.onclick = novaFuncao; // em que 'novaFuncao' é o nome de outra função a ser executada
+
+function novaFuncao() { ... }
+```
+
+Além disso, é possível adicionar um evento utilizando um Event Listener, com `.addEventListener`:
+
+Sintaxe:
+```js
+element.addEventListener("<event>", "<function>") // nome dos eventos sem 'on', ex: 'onclick' -> 'click', 'onmouseover' -> 'mouseover'...
+```
+
+Por exemplo:
+```js
+let div = document.querySelector(".divTeste");
+
+div.addEventListener("click", novaFuncao);
+
+function novaFuncao() { ... }
+```
 <br>
 
 - #### **O que é o This?**

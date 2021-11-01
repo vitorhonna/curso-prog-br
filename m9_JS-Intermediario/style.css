@@ -1,0 +1,21 @@
+.paragrafo {
+  color: blue;
+}
+
+.red {
+  color: red;
+}
+
+span {
+  display: none;
+}
+
+.divTeste {
+  --div-size: 150px;
+  width: var(--div-size);
+  height: var(--div-size);
+  background-color: blue;
+  color: white;
+  text-align: center;
+  line-height: var(--div-size);
+}
