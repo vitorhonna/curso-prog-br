@@ -25,7 +25,7 @@
     nostrum explicabo architecto ipsam a assumenda ut maiores, quasi consectetur et incidunt officia? Et, quam?
   </p>
 
-  <p class="paragrafoTeste">paragrafo teste <span>texto oculto com css</span></p>
+  <p class="paragrafoTeste">paragrafo teste <span class="hiddenText">texto oculto com css</span></p>
 
   <div class="divTeste" onclick="divClicked(this)" onmouseover="onDiv(this)" onmouseout="outDiv(this)">
     Click here
@@ -34,10 +34,17 @@
   <p class="textoInserido"></p>
   <input oninput="insertText(this)" placeholder="Digite algo aqui">
 
+  <p onclick="f1(this)">Clique Aqui 1</p>
 
+  <p id="ref">Clique Aqui 2</p>
 
+  <h2> Stopwatch </h2>
 
+  <p><span id="min">00</span>:<span id="sec">55</span></p>
 
+  <button id="start">Start</button>
+  <button id="stop">Stop</button>
+  <button id="reset">Reset</button>
 
 
 

@@ -1493,13 +1493,13 @@ p.setAttribute("meuAtt", "novoNome");
 
 Eventos podem ser adicionado a tags como atributos. Eles podem modificar elementos,
 chamar funções, aplicar estilos, etc.\
-Exemplos de eventos: 
+Exemplos de eventos:
 
 \- `onclick="funcao"` : Executa uma função quando clicado.\
 \- `onchange="funcao"` : Colocado em uma tag `input`, executa quando o campo de texto perde o foco.\
 \- `oninput="funcao"` : Colocado em uma tag `input`, executa conforme o texto é digitado.\
 \- `onload="funcao"` : Colocado na tag `body`, executa depois que toda a página for carregada.\
-\- `onmouseover="funcao"` : Executa quando o cursor passar sobre o elemento
+\- `onmouseover="funcao"` : Executa quando o cursor passar sobre o elemento\
 \- `onmouseout="funcao"` : Executa quando o cursor deixar o elemento.
 
 <br>
@@ -1518,11 +1518,13 @@ function novaFuncao() { ... }
 Além disso, é possível adicionar um evento utilizando um Event Listener, com `.addEventListener`:
 
 Sintaxe:
+
 ```js
-element.addEventListener("<event>", "<function>") // nome dos eventos sem 'on', ex: 'onclick' -> 'click', 'onmouseover' -> 'mouseover'...
+element.addEventListener("<event>", "<function>"); // nome dos eventos sem 'on', ex: 'onclick' -> 'click', 'onmouseover' -> 'mouseover'...
 ```
 
 Por exemplo:
+
 ```js
 let div = document.querySelector(".divTeste");
 
@@ -1530,43 +1532,177 @@ div.addEventListener("click", novaFuncao);
 
 function novaFuncao() { ... }
 ```
-<br>
-
-- #### **O que é o This?**
-
-<br>
-
-- #### **Tirando dúvida sobre o lance dos parênteses nas funções**
 
 <br>
 
 - #### **Comparando as maneiras de criar um evento**
 
+\- Criando na `tag` html:
+
+A propriedade `this` retorna o objeto `window`, não a `tag`.
+
+```html
+<p onclick="f1()">Clique Aqui 1</p>
+```
+
+```js
+function f1() {
+  console.log("teste1");
+  console.log(this); // Imprime o objeto window
+}
+```
+
+Nenhum argumento é enviado para a função, se não for explicitamente colocado.
+
+```js
+function f1(e) {
+  console.log("teste1");
+  console.log(e); // undefined
+}
+```
+
+Para acessar a tag no js, é possível passar `this` como um argumento da função na `tag`, porém o parâmetro recebido pela função não pode se chamar `this`.
+
+```html
+<p onclick="f1(this)">Clique Aqui 1</p>
+```
+
+```js
+function f1(tag) {
+  console.log("teste1");
+  console.log(this); // Imprime o objeto window
+  console.log(tag); // Imprime a tag html
+}
+```
+
+\- Criando com `.addEventListener`:
+
+A propriedade `this` retorna a `tag` que teve um evento adicionado.
+
+```html
+<p id="ref">Clique Aqui 2</p>
+```
+
+```js
+function f2() {
+  console.log("teste2");
+  console.log(this); // Imprime a tag p com id ref
+}
+
+window.onload = () => {
+  let p = document.querySelector("#ref");
+
+  p.addEventListener("click", f2);
+};
+```
+
+O método `.addEventListener` envia como argumento o evento de clique `PointerEvent`, que é um objeto com inúmeras informações sobre o evento, como a tag que foi clicada:
+
+```js
+function f2(e) {
+  console.log("teste2");
+  console.log(e); // PointerEvent {isTrusted: true, pointerId: 1, width: 1, height: 1, pressure: 0, …}
+  console.log(e.target); // Imprime a tag que foi clicada
+}
+```
+
 <br>
 
 - #### **Elementos pai e filhos**
+
+Para acessar os elementos pai ou filhos a partir de um elemento:
+
+\- `.parentElement` : acessa o elemento pai\
+\- `.children` : acessa os elementos filhos
 
 <br>
 
 - #### **Biblioteca Math**
 
+Biblioteca de funções matemáticas.
+
+\- `Math.PI` : retorna o número pi\
+\- `Math.E` : retorna o número e\
+\- `Math.sqrt(<value>)` : retorna a raiz quadrada de \<value>\
+\- `Math.pow(<val1>,<val2>)` : retorna a potência \<val1>^\<val2> \
+\- `Math.random` : retorna um número aleatório entre 0 e 0.99... \
+\- `Math.round(<value>)` : retorna \<value> arredondado para o **maior ou menor** inteiro mais próximo\
+\- `Math.floor(<value>)` : retorna \<value> arredondado para o **maior** inteiro mais próximo\
+\- `Math.ceil(<value>)` : retorna \<value> arredondado para o **menor** inteiro mais próximo\
+\- `Math.trunc(<value>)` : retorna \<value> arredondando para o inteiro mais próximo **na direção do zero** 
+
+Math.trunc() arredonda na direção do zero, ou seja, se o número for positivo, ele arredonda para menos, se for negativo, ele arredonda para mais. Enquanto Math.floor() sempre arredonda para menos e Math.ceil() sempre arredonda para mais. Ou seja, Math.trunc() funciona como Math.floor() para números positivos e como Math.ceil() para números negativos. Além disso, nenhuma dessas funções leva em conta o valor não inteiro do número.
+
+Exemplos:\
+-> 1.2\
+Math.trunc(1.2) retorna 1\
+Math.floor(1.2) retorna 1\
+Math.ceil(1.2) retorna 2
+
+-> -1.2\
+Math.trunc(1.2) retorna -1\
+Math.floor(1.2) retorna -2\
+Math.ceil(1.2) retorna -1
+
 <br>
 
 - #### **JSON**
+
+É a representação de um objeto: JavaScript Object Notation.
+
+`JSON` possui dois métodos:
+
+\- `JSON.parse` : pega uma string e transforma em um objeto JSON.
+
+\- `JSON.stringfy` : pega um objeto JSON e transforma em uma string.
+
+```js
+let person = {
+  name: "Vitor",
+  age: "26",
+};
+
+console.log(JSON.stringify(person)); // string: {"name":"Vitor","age":"26"}
+
+let cat = '{"name": "Tom", "sound": "meow"}';
+
+console.log(JSON.parse(cat)); // objeto: {name: 'Tom', sound: 'meow'}
+```
 
 <br>
 
 - #### **Local Storage - Persistência de dados**
 
-<br>
+`localStorage` é uma propriedade de `window`, ele permite a persistência de dados por meio dos métodos:
 
-- #### **Criando uma página para sorteio**
+\- `.setItem()` : salva um dado na memória -> `localStorage.setItem("name", "Vitor")`
+
+\- `.getItem()` : recupera um dado da memória -> `localStorage.getItem("name")`
+
+\- `.removeItem()` : deleta um dado da memória -> `localStorage.removeItem("name")`
+
+Os dados são armazenados conforme o domínio da página, ou seja, não podem ser acessados em páginas diferentes. Por exemplo, dados de um aluno salvos em escola.com não podem ser acessados em faculdade.com.
 
 <br>
 
 - #### **Timer e Intervalo**
 
+\- Timer: executa uma função **uma vez** depois de um intervalo de tempo
+
+`<name> = setTimeout(<function>, <time>)`, o tempo deve ser especificado em ms
+
+\- Intervalo: executa uma função **repetidamente** a cada intervalo de tempo
+
+`<name> = setInterval(<function>, <time>)`
+
+\- Parar execução: `clearTimeout(<name>)` e `clearInterval(<name>)`
+
 <br>
+
+### Módulo 10: Projeto Churrascômetro
+
+- #### **Tópico1**
+
 
 <br>
 <br>
