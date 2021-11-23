@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="styleAnimacao.css" />
+        <title>Animação / MiniGame</title>
+    </head>
+    <body>
+        <div id="canvas" class="tela">
+            <div id="player" class="player"></div>
+            <div id="controller" class="controller">
+                <span onclick="Move.up()" id="arrow_up" class="material-icons">
+                    arrow_upward
+                </span>
+                <span
+                    onclick="Move.left()"
+                    id="arrow_left"
+                    class="material-icons"
+                >
+                    arrow_back
+                </span>
+                <span
+                    onclick="Move.right()"
+                    id="arrow_right"
+                    class="material-icons"
+                >
+                    arrow_forward
+                </span>
+                <span
+                    onclick="Move.down()"
+                    id="arrow_down"
+                    class="material-icons"
+                >
+                    arrow_downward
+                </span>
+            </div>
+        </div>
+
+        <script src="./scriptAnimacao.js"></script>
+    </body>
+</html>

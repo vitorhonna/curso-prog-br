@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
+            rel="stylesheet"
+        />
+
+        <link rel="stylesheet" href="styleVideo.css" />
+        <title>Video</title>
+    </head>
+    <body>
+        <div class="container">
+            <video id="video1" class="video" src="./assets/videos/videoIcons.mp4"></video>
+            <div class="controller">
+                <div class="buttons">
+                    <span class="btn material-icons" onclick="replay_5()"> replay_5 </span>
+                    <span class="btn material-icons" onclick="forward_5()"> forward_5 </span>
+                    <span class="btn material-icons" onclick="stop()"> stop </span>
+                    <span id="play_pause" class="btn material-icons" onclick="play_pause()"> play_arrow </span>
+                    <span id="loop" class="btn material-icons" onclick="toggleLoop()"> loop </span>
+                    <span class="btn material-icons-outlined" onclick="decreaseSpeed()"> remove </span>
+                    <span class="btn material-icons-outlined" onclick="increaseSpeed()"> add </span>
+                </div>
+            </div>
+        </div>
+
+        <script src="scriptVideo.js"></script>
+    </body>
+</html>

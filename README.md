@@ -10,12 +10,22 @@
 
 ## Índice
 
-- [Módulo 2: HTML Básico](https://github.com/vitorhonna/cursoProgramadorBR#módulo-2-html-básico)
-- [Módulo 3: CSS Básico](https://github.com/vitorhonna/cursoProgramadorBR#módulo-3-css-básico)
-- [Módulo 4: CSS Intermediário](https://github.com/vitorhonna/cursoProgramadorBR#módulo-4-css-intermediário)
-- [Módulo 5: HTML Intermediário](https://github.com/vitorhonna/cursoProgramadorBR#módulo-5-html-intermediário)
-- [Módulo 8: Javascript Básico](https://github.com/vitorhonna/cursoProgramadorBR#módulo-8-javascript-básico)
-- [Módulo 9: Javascript Intermediário](https://github.com/vitorhonna/cursoProgramadorBR#módulo-9-javascript-intermediário)
+- [Curso de Desenvolvimento Web - Programador BR](#curso-de-desenvolvimento-web---programador-br)
+  - [Certificados](#certificados)
+  - [Índice](#índice)
+  - [Anotações](#anotações)
+    - [Módulo 2: HTML Básico](#módulo-2-html-básico)
+    - [Módulo 3: CSS Básico](#módulo-3-css-básico)
+    - [Módulo 4: CSS Intermediário](#módulo-4-css-intermediário)
+    - [Módulo 5: HTML Intermediário](#módulo-5-html-intermediário)
+    - [Módulo 8: Javascript Básico](#módulo-8-javascript-básico)
+    - [Módulo 9: Javascript Intermediário](#módulo-9-javascript-intermediário)
+    - [Módulo 11: HTML Avançado](#módulo-11-html-avançado)
+    - [Módulo 12: CSS Avançado](#módulo-12-css-avançado)
+    - [Módulo 13: CSS Animações](#módulo-13-css-animações)
+    - [Módulo 14: Javascript Avançado](#módulo-14-javascript-avançado)
+  - [Design Resources](#design-resources)
+  - [Markdown](#markdown)
 
 ## Anotações
 
@@ -1698,8 +1708,129 @@ Os dados são armazenados conforme o domínio da página, ou seja, não podem se
 \- Parar execução: `clearTimeout(<name>)` e `clearInterval(<name>)`
 
 <br>
+<br>
 
-### Módulo 10: Projeto Churrascômetro
+### Módulo 11: HTML Avançado
+
+- #### **Atributos personalizados**
+
+É possível criar atributos personalizado utilizando o método `.setAttribute(<attrName>,<attrValue>)`.
+
+Para atributos com o nome precedido de "data-", é possivel acessar os atributos utilizando `el.dataset.<attrName>`:
+
+```html
+<ul id="list" data-num="5"></ul>
+```
+
+```js
+const lista = document.querySelector("#list");
+console.log(lista.dataset.num); // "5"
+```
+
+<br>
+
+- #### **Vídeos**
+
+Por padrão, os controles de vídeo ficam ocultos. Utilizar o atributo `controls` para mostrá-los.
+
+```html
+<video controls src="video.mp4"></video>
+```
+
+Atributos:
+
+- `autoplay` e `muted`: reproduzir automaticamente, alguns navegadores só reproduzem automaticamente se o som estiver mutado.
+- `loop`: reprodução em loop.
+- `poster="thumb.png"`: thumb do vídeo.
+-`preload=<auto | metadata | none>`: configura como o vídeo deve ser carregado.
+
+É possível criar players com controles personalizados para videos.
+Ver referência com a [lista de métodos e propriedades](https://www.w3schools.com/tags/ref_av_dom.asp).
+
+<br>
+
+- #### **iFrame**
+
+Utilizar a tag `iframe` para adicionar outras páginas html dentro de uma página html. É útil para adicionar vídeos do YouTube.
+
+<br>
+
+- #### **Audio**
+
+Tag `audio`. É possivel adicionar audios em fallback, caso um formato principal não seja reconhecido (assim como se faz com fontes):
+
+```html
+<audio controls>
+    <source src="./audio1.ogg" type="audio/ogg" />
+    <source src="./audio2.mp3" type="audio/mpeg" />
+</audio>
+```
+
+Assim como vídeos, há diversas [propriedades e métodos](https://www.w3schools.com/tags/ref_av_dom.asp) para controle e personalização.
+
+<br>
+
+- #### **Canvas - Intro + Linhas**
+
+
+
+<br>
+
+- #### **Canvas - Largura x Altura**
+
+
+
+<br>
+
+- #### **Canvas - Retângulo**
+
+
+
+<br>
+
+- #### **Canvas - Inicio e Fim do caminho (Path)**
+
+
+
+<br>
+
+- #### **Canvas - Circles**
+
+
+
+<br>
+
+- #### **Canvas - Animação**
+
+
+
+<br>
+
+- #### **Canvas - Imagens**
+
+
+
+<br>
+
+
+<br>
+<br>
+
+### Módulo 12: CSS Avançado
+
+- #### **Tópico1**
+
+<br>
+<br>
+
+### Módulo 13: CSS Animações
+
+- #### **Tópico1**
+
+<br>
+<br>
+
+### Módulo 14: Javascript Avançado
 
 - #### **Tópico1**
 
@@ -1720,6 +1851,8 @@ Os dados são armazenados conforme o domínio da página, ou seja, não podem se
 - [unsplash](https://unsplash.com/)
 - [flaticon](https://www.flaticon.com/)
 - [pexels](https://www.pexels.com/)
+- [Material Design Icons](https://fonts.google.com/icons?selected=Material+Icons)
+- [PNG Egg](https://www.pngegg.com/)
 
 <br>
 <br>
