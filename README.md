@@ -1770,48 +1770,108 @@ Assim como vídeos, há diversas [propriedades e métodos](https://www.w3schools
 
 <br>
 
-- #### **Canvas - Intro + Linhas**
+- #### **Canvas:**
 
+Utilizar canvas para desenhar. A tela de desenho é definida pela tag `canvas`, que deve possuir um id, width e height. É importante definir a largura e altura no html, para não ter problemas com o posicionamento dos desenhos depois.
 
+Antes de começar a desenhar, é preciso acessar o contexto.
 
-<br>
+-> **Linhas:**
 
-- #### **Canvas - Largura x Altura**
+```html
+<canvas id="canvas" width="500px" height="500px"> </canvas>
+```
 
+```js
+const canvas = document.querySelector("#canvas");
 
+const context = canvas.getContext("2d");
 
-<br>
+context.moveTo(2.5, 0);
+context.lineTo(250, 250);
+context.lineTo(497.5, 0);
+context.lineTo(497.5, 497.5);
+context.lineTo(2.5, 497.5);
+context.lineTo(2.5, 0);
+context.lineWidth = 5;
+context.strokeStyle = "darkblue";
+context.stroke();
 
-- #### **Canvas - Retângulo**
-
-
-
-<br>
-
-- #### **Canvas - Inicio e Fim do caminho (Path)**
-
-
-
-<br>
-
-- #### **Canvas - Circles**
-
-
-
-<br>
-
-- #### **Canvas - Animação**
-
-
+```
 
 <br>
 
-- #### **Canvas - Imagens**
+-> **Retângulos:**
 
+Os argumentos estão na ordem: (x, y, width, height).
 
+```js
+context.fillStyle = "lightskyblue";
+context.fillRect(20, 380, 150, 100);
+
+context.strokeRect(330, 380, 150, 100);
+
+context.rect(200, 330, 100, 150);
+context.fill();
+context.stroke();
+
+context.clearRect(40, 420, 400, 20);
+```
 
 <br>
 
+-> **Path**
+
+Para separar as curvas, utilizar `context.beginPath()`.
+Após passar uma sequência de pontos, para fechar a curva: `context.closePath()`.
+
+```js
+context.beginPath();
+context.strokeStyle = "gray";
+context.fillStyle = "lightgray";
+context.moveTo(25, 75);
+context.lineTo(200, 250);
+context.lineTo(25, 250);
+context.closePath();
+context.fill();
+context.stroke();
+```
+
+<br>
+
+-> **Circles**
+
+Os argumentos estão na ordem: T
+
+```js
+context.beginPath();
+context.strokeStyle = "black";
+context.fillStyle = "lightgray";
+const { x_center, y_center, radius, start, end } = {
+    x_center: 250 + 250 * (2 / 3),
+    y_center: 250 * (2 / 3),
+    radius: 25,
+    start: Math.PI * 0,
+    end: Math.PI * 2,
+};
+context.arc(x_center, y_center, radius, start, end);
+context.fill();
+context.stroke();
+```
+
+<br>
+
+-> **Animação**
+
+É possível criar animações utilizando `setInterval` e as funções de desenho.
+
+<br>
+
+-> **Imagens**
+
+É possível inserir imagens dentro de um canvas, para isso, criar um elemento usando `const img = new Image()`, definir a fonte da imagem `img.src = "./image.png"`, e adicionar ao canvas com `context.drawImg(img, <x>, <y>, <width>, <height>)`. Para acessar o tamanho da image, pode-se usar `img.naturalWidth` e `img.naturalHeight`.
+
+Pode se necessário esperar a página carregar, nesse caso, utilizar o método `onload` e passar um função que contenha o código que desenha a imagem (nessa função, o elemento de imagem pode ser referenciado com `this`).
 
 <br>
 <br>
