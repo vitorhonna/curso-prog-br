@@ -88,6 +88,8 @@ selector {
 }
 ```
 
+**IMPORTANTE**: quando aplicado *inline-block*, uma margem de 4px é aplicada automaticamente devido a quebra de linha existente no HTML. [Mais informações e ideias de solução aqui](https://css-tricks.com/fighting-the-space-between-inline-block-elements/).
+
 Propriedade `display` padrão dos elementos:
 
 > `<div>`: block\
@@ -1739,10 +1741,10 @@ Por padrão, os controles de vídeo ficam ocultos. Utilizar o atributo `controls
 
 Atributos:
 
-- `autoplay` e `muted`: reproduzir automaticamente, alguns navegadores só reproduzem automaticamente se o som estiver mutado.
-- `loop`: reprodução em loop.
-- `poster="thumb.png"`: thumb do vídeo.
--`preload=<auto | metadata | none>`: configura como o vídeo deve ser carregado.
+-> `autoplay` e `muted`: reproduzir automaticamente, alguns navegadores só reproduzem automaticamente se o som estiver mutado.\
+-> `loop`: reprodução em loop.\
+-> `poster="thumb.png"`: thumb do vídeo.\
+-> `preload=<auto | metadata | none>`: configura como o vídeo deve ser carregado.
 
 É possível criar players com controles personalizados para videos.
 Ver referência com a [lista de métodos e propriedades](https://www.w3schools.com/tags/ref_av_dom.asp).
@@ -1796,7 +1798,6 @@ context.lineTo(2.5, 0);
 context.lineWidth = 5;
 context.strokeStyle = "darkblue";
 context.stroke();
-
 ```
 
 <br>
@@ -1878,7 +1879,165 @@ Pode se necessário esperar a página carregar, nesse caso, utilizar o método `
 
 ### Módulo 12: CSS Avançado
 
-- #### **Tópico1**
+- #### **Pseudo Elementos**
+
+Indicados por `::` após um seletor. Permitem funções adicionais no CSS. [Mais informações aqui](https://github.com/vitorhonna/rocketseat-discover/blob/main/CSS/css.md#pseudo-elements). [E aqui](https://www.w3schools.com/cssref/css_selectors.asp).
+
+-> `::first-letter`\
+-> `::first-line`\
+-> `::before`\
+-> `::after`\
+-> `::selection`
+
+<br>
+
+- #### **Seletores**
+
+Selecionam elementos para aplicação de estilos. [Mais informações aqui](https://github.com/vitorhonna/rocketseat-discover/blob/main/CSS/css.md#seletores-e-combinators). [E aqui](https://www.w3schools.com/cssref/css_selectors.asp).
+
+<br>
+
+- #### **Pseudo Classes**
+
+Indicadas por `:` após um seletor. Permitem funções adicionais no CSS. [Mais informações aqui](https://github.com/vitorhonna/rocketseat-discover/blob/main/CSS/css.md#pseudo-classes---selecionando-elementos). [E aqui](https://www.w3schools.com/cssref/css_selectors.asp).
+
+<br>
+
+- #### **Função Calc CSS**
+
+Permite a realização de cálculos para serem usados como valores de propriedades. [Mais informações aqui](https://developer.mozilla.org/en-US/docs/Web/CSS/calc()).
+
+<br>
+
+- #### **Transformações**
+
+É possível aplicar transformações aos elementos selecionados utilizando `transform`. Essa propriedade tem como valor uma função, que vai determinar o tipo de transformação. Exemplos:
+
+-> `transform: rotate(45deg)`\
+-> `transform: scale(0.25)`\
+-> `transform: skew(-15deg, -15deg)`\
+-> `transform: translate(-50%, -50%)`
+
+Também é possível combinar transformações: `transform: rotate(45deg) scale(0.25)`.
+
+Mais opções [consultar aqui](https://developer.mozilla.org/pt-BR/docs/Web/CSS/transform).
+
+<br>
+
+- #### **Compatibilidade de navegadores**
+
+Nem todos os navegadores são compatíveis com algumas propriedades CSS. Verificar compatibilidade em:
+
+[Should I Prefix](http://shouldiprefix.com/)\
+[Can I Use](https://caniuse.com/)
+
+<br>
+
+- #### **Variáveis em CSS**
+
+É possível criar variáveis em CSS. 
+
+```css
+:root {
+    --size: 200px;
+    --azul: cornflowerblue;
+    --margin: 100px;
+}
+
+div.square {
+    width: var(--size);
+    height: var(--size);
+    background-color: var(--azul);
+    margin: var(--margin);
+}
+
+div.circle {
+    width: var(--size);
+    height: var(--size);
+    background-color: var(--azul);
+    margin: var(--margin);
+    
+    border-radius: 50%;
+}
+```
+
+<br>
+
+- #### **FlexBox** 
+
+[Mais informações aqui](https://github.com/vitorhonna/rocketseat-discover/blob/main/CSS/css.md#alinhando-os-planetas-flexbox).\
+[E aqui](https://css-tricks.com/snippets/css/a-guide-to-flexbox/).\
+[E aqui](https://origamid.com/projetos/flexbox-guia-completo/).\
+[E testes interativos aqui](https://codepen.io/enxaneta/pen/adLPwv).
+
+Treinar flexbox no [Flexbox Froggy](https://flexboxfroggy.com/).
+
+-> **Flex Direction**: Determina a direção do eixo principal.
+
+-> **Wrap**: Determina se os elementos devem ter seu tamanho modificado para caber em uma linha ou se deve ser aplicada uma quebra de linha (preserva o tamanho dos elementos).
+
+-> **Flex Flow**: Shorthand para o flex direction e wrap.
+
+-> **Justify Content**: Alinha os itens com relação ao EIXO PRINCIPAL (as linhas).
+
+-> **Align Items**: Alinha os itens com relação ao EIXO TRANSVERSAL (as linhas).
+
+-> **Align Content**: Alinha as ***linhas*** com relação ao container, nesse caso elas passam a ter apenas o tamanho necessário para conter os itens, em vez de preencher todo o espaço do elemento pai (padrão stretch).
+
+-> **Grow/Shrink**: Determina como o elemento pode expandir para preencher o espaço restante. Ou encolher para caber no espaço disponível.
+
+-> **Ordem**: Determina a ordem em que os elementos aparecem. Por padrão vale 0.
+
+-> **Align Self**: Propriedade aplicada no elemento. Cria uma regra específica para aquele elemento e sobrescreve a regra geral definida no elemento pai. Com isso, é possível, por exemplo, alinhar todos os elementos ao centro (regra geral) e um elemento específico ao topo (regra específica).
+
+<br>
+
+- #### **Grid:**
+
+-> **Template:**
+
+\- `grid-template-rows: 1fr 1fr`: duas linhas de mesmo tamanho, que preenchem todo o espaço disponível.\
+\- `grid-template-columns: 1fr 2fr 1fr`: três colunas, sendo a do meio com o dobro do tamanho das adjacentes. Preenchem todo o espaço disponível.\
+\- `grid-template: 1fr fr / 1fr 2fr 1fr`: shorthand, com valores para as linhas primeiro, separados por uma barra dos valores para colunas.
+
+É possível alterar o posicionamento dos elementos individualmente utilizando `grid-row` e `grid-colum`.
+
+<br>
+
+-> **Gap:**
+
+Define o espaçamento entre os elementos do grid.
+
+\- `row-gap: 10px`: espaçamento entre linhas.\
+\- `colum-gap: 20px`: espaçamento entre colunas.\
+\- `gap: 15px` shorthand, aplica o valor para linhas e colunas. Se forem passados dois valores, o primeiro corresponde ao gap das linhas e o segundo, ao das colunas.
+
+<br>
+
+-> **Justify e Align Items:**
+
+`justify-items` e `align-items` posicionam os **elementos** dentro de sua célula do grid.
+
+<br>
+
+-> **Justify e Align Content:**
+
+`justify-content` e `align-content` posicionam as **linhas e colunas (células)** do grid com relação ao elemento pai. Ao alterar uma dessas propriedades, as células deixam de crescer para ocupar todo o espaço disponível e passam a ter apenas o tamanho necessário para conter os elementos que estão em seu interior (perdem o valor padrão `stretch`).
+
+<br>
+
+-> **Template Area:**
+
+[Mais informações aqui](https://github.com/vitorhonna/rocketseat-discover/blob/main/CSS/css.md#posicionando-foguetes).
+
+<br>
+
+-> **Column e Row Start e End:**
+
+Para fazer um elemento ocupar mais de uma coluna, utilizar `grid-column-start` e `grid-colum-end` passando as referências das células do grid. Essa referência indica o **início** da célula, então para um elemento cobrir as três primeiras colunas, por exemplo, ele deve receber 1 e 4.
+Para linhas, utilizar `grid-row-start` e `grid-row-end`.
+
+Quando um elemento já começa em uma posição desejada, pode-se passar apenas onde ele deve terminar. Assim, para indicar apenas a quantidade de células que um elemento deve ocupar, pode-se passar `span` antes do número de espaços a ocupar. Por exemplo, para ocupar 3 colunas: `grid-column-end: span 3` (sem o `span` ele ocuparia apenas 1 espaço na última coluna). 
 
 <br>
 <br>

@@ -1,0 +1,64 @@
+:root {
+    --size: 100px;
+    --azul: cornflowerblue;
+    --margin: 10px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.containerGrid {
+    background-color: lightyellow;
+    height: 800px;
+
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-columns: auto auto auto;
+    gap: 50px;
+
+    justify-items: center;
+    align-items: center;
+
+    justify-content: center;
+    align-content: center;
+}
+
+.container {
+    background-color: lightpink;
+    height: 500px;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+div {
+    /* display: inline-block; */
+
+    text-align: center;
+    line-height: var(--size);
+}
+
+div.square {
+    width: var(--size);
+    height: var(--size);
+    background-color: var(--azul);
+    /* margin: var(--margin); */
+
+    /* transform: rotate(45deg); */
+    /* transform: scale(0.25); */
+    /* transform: skew(-15deg, -15deg); */
+    /* transform: translate(-50%, -50%); */
+}
+
+div.circle {
+    width: var(--size);
+    height: var(--size);
+    background-color: var(--azul);
+    /* margin: var(--margin); */
+
+    border-radius: 50%;
+}
