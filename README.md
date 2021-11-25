@@ -4,7 +4,7 @@
 
 > _:( Ainda não temos certificados_
 
-- Html, CSS e Javascript (Módulo 1 ao 14)
+- HTML, CSS e Javascript (Módulo 1 ao 14)
 - Firebase, jQuery, Bootstrap (Módulo 17 ao 20)
 - Node, Mongo (Módulo 21 ao 30)
 
@@ -2044,7 +2044,75 @@ Quando um elemento já começa em uma posição desejada, pode-se passar apenas 
 
 ### Módulo 13: CSS Animações
 
-- #### **Tópico1**
+- #### **Keyframes**:
+
+
+
+<br>
+
+- #### **Adicionando estados a animação**:
+
+
+
+
+<br>
+
+- #### **Propriedades**:
+
+
+
+
+<br>
+
+- #### **Delay**:
+
+
+
+
+<br>
+
+- #### **Loop**:
+
+
+
+
+<br>
+
+- #### **Direction**:
+
+
+
+
+<br>
+
+- #### **Fill Mode**:
+
+
+
+
+<br>
+
+- #### **Timing Function**:
+
+
+
+
+<br>
+
+- #### **Short Hand**:
+
+
+
+
+<br>
+
+- #### **Transitions**:
+
+
+
+
+<br>
+
 
 <br>
 <br>
