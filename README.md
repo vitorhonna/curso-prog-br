@@ -2228,7 +2228,121 @@ Quando nenhuma propriedade é escolhida, mas uma duração é determinada, ela �
 
 ### Módulo 14: Javascript Avançado
 
-- #### **Tópico1**
+- #### **Strict mode**
+
+Para tornar obrigatória a declaração de todas as variáveis dentro do escopo que estão sendo utilizadas, adicionar `"use strict"` no início do script. Assim, problemas de escopo são evitados. Exemplo: uma variável utilizada dentro de uma função porém não declarada com uma palavra reservada (`var`, `let`, `const`) tem escopo global, pois é declarada no momento do hoisting da função. Ao utilizar o strict mode isso não é mais possível. Da mesma forma que declarar uma variável fora de uma função e depois tentar usá-la dentro da função não funcionará.
+
+<br>
+
+- #### **This e Bind**
+
+`this` faz referência ao objeto em contexto. Por exemplo, um método dentro de um objeto pode acessar informações do próprio objeto utilizando `this` e notação de ponto. Com isso, também é possível criar funções genéricas para determinadas classes de objetos que possuam atributos com mesma key. Ex:
+
+```js
+function speakGeneric() {
+    print(this.sound);
+    console.log(this.sound);
+}
+
+const Dog = {
+    sound: "Woof woof",
+    speak: speakGeneric,
+};
+
+const Cat = {
+    sound: "Meow meow",
+    speak: speakGeneric,
+};
+
+Dog.speak(); // Woof woof
+Cat.speak(); // Meow meow
+```
+
+Se a função não tiver um contexto (fora de um objeto, por exemplo), o `this` será indefinido. Para dar contexto a função, utilizar `bind` para passar um objeto como argumento que a função irá considerar para o valor de `this`.
+
+```js
+speakGeneric(); // undefined
+
+let function_bind = speakGeneric.bind(Dog);
+
+function_bind(); // Woof woof
+```
+
+<br>
+
+- #### **Arrow Functions**
+
+
+
+<br>
+
+- #### **Callback**
+
+
+
+<br>
+
+- #### **Promises**
+
+
+
+<br>
+
+- #### **Async Await - Uma outra maneira de usar promises**
+
+
+
+<br>
+
+- #### **Filter**
+
+
+
+<br>
+
+- #### **Map**
+
+
+
+<br>
+
+- #### **Valor vs Referência**
+
+
+
+<br>
+
+- #### **Spread Operator**
+
+
+
+<br>
+
+- #### **Desestruturando um objeto**
+
+
+
+<br>
+
+- #### **Reduce**
+
+
+
+<br>
+
+- #### **Desafio - JS Avançado**
+
+
+
+<br>
+
+- #### **Fetch**
+
+
+
+<br>
+
+- #### **try catch**
 
 
 <br>
