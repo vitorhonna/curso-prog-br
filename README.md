@@ -2046,73 +2046,182 @@ Quando um elemento já começa em uma posição desejada, pode-se passar apenas 
 
 - #### **Keyframes**:
 
+Para criar uma animação, criar um `@keyframe` com o nome da animação e definir o estado inicial, com `from` e o estado final, com `to`. Em seguida, aplicar a animação a um elemento utilizando a propriedade `animation-name` e definir a duração com `animation-duration`.
 
+```css
+@keyframes changeColor {
+    from {
+        background-color: lightcyan;
+        color: black;
+    }
+    to {
+        background-color: darkblue;
+        color: white;
+    }
+}
+
+.animation .square {
+    animation-name: changeColor;
+    animation-duration: 5s;
+}
+```
 
 <br>
 
 - #### **Adicionando estados a animação**:
 
+Além do estado inicial e final, é possível definir estados intermediários utilizando porcentagens:
 
+```css
+@keyframes changeColorAndWidth {
+    0% {
+        background-color: lightcyan;
+        color: black;
+    }
+    50% {
+        background-color: purple;
+        width: 200px;
+    }
+    100% {
+        background-color: darkblue;
+        color: white;
+    }
+}
 
-
-<br>
-
-- #### **Propriedades**:
-
-
-
+.animation .square {
+    animation-name: changeColorAndWidth;
+    animation-duration: 5s;
+}
+```
 
 <br>
 
 - #### **Delay**:
 
+É possível determinar um delay antes da animação começar, para isso, setar no elemento a propriedade `animation-delay` passando um valor de tempo.
 
-
+```css
+.animation .square {
+    animation-name: changeColorAndWidth;
+    animation-duration: 5s;
+    animation-delay: 2s;
+}
+```
 
 <br>
 
 - #### **Loop**:
 
+Para repetir uma animação, setar no elemento a propriedade `animation-iteration-count` passando um número de repetições ou `infinite`.
 
-
+```css
+.animation .square {
+    animation-name: changeColorAndWidth;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+```
 
 <br>
 
 - #### **Direction**:
 
+É possível determinar a direção da animação utilizando a propriedade `animation-direction`. Passando o valor `reverse` por exemplo, a animação começará do estado final e irá para o estado inicial. Já o valor `alternate` inicia pelo estado inicial, vai para o estado final, porém reinicia a partir do estado final.
 
-
+```css
+.animation .square {
+    animation-name: changeColorAndWidth;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+```
 
 <br>
 
 - #### **Fill Mode**:
 
+Para determinar o estado de uma animação ao carregar a página ou ao terminar a animação, utilizar a propriedade `animation-fill-mode`.
 
+-> `animation-fill-mode: forwards` congela no último frame após o término da animação.
+
+```css
+.animation .square {
+    animation-name: changeColorAndWidth;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+}
+```
+
+-> `animation-fill-mode: backwards` mostra o elemento no estado inicial da animação assim que a página é carregada. Só funciona se a propriedade `animation-delay` estiver determinada. 
+
+```css
+.animation .square {
+    animation-name: changeColorAndWidth;
+    animation-duration: 3s;
+    animation-delay: 500ms;
+    animation-fill-mode: backwards;
+}
+```
+
+-> `animation-fill-mode: both` combina as duas funções anteriores: inicia o elemento após o carregamento da página com o estado inicial da animação e congela o ultimo frame após o término.
 
 
 <br>
 
 - #### **Timing Function**:
 
+A propriedade `animation-timing-function` define a velocidade do movimento.
 
-
+```css
+.animation .square:nth-child(1) {
+    animation-timing-function: linear; /* Velocidade Linear */
+}
+.animation .square:nth-child(2) {
+    animation-timing-function: ease; /* Médio no início, muito rápido no meio e lento no final */
+}
+.animation .square:nth-child(3) {
+    animation-timing-function: ease-in; /* Lento no início */
+}
+.animation .square:nth-child(4) {
+    animation-timing-function: ease-out; /* Lento no final */
+}
+.animation .square:nth-child(5) {
+    animation-timing-function: ease-in-out; /* Lento no início e no final */
+}
+```
 
 <br>
 
 - #### **Short Hand**:
 
+É possível passar todos os valores em uma única propriedade: `animation`.
 
-
+```css
+animation: <name> <duration> <timing-function> <delay> <iteration-count> <direction> <fill-mode>;
+```
 
 <br>
 
 - #### **Transitions**:
 
+Sem a definição de uma transição, a aplicação de uma pseudo-classe (`:hover`, por exemplo) é instantânea. Para alterar esse comportamento, escolher a/as propriedades com `transition-property` e determinar a duração com `transition-duration`. Deve-se aplicar as definições de transição no elemento que já está sendo exibido na página (sem a pseudo-classe).
 
+```css
+.transition div {
+    margin: 20px;
+    transition-property: background-color color border-radius;
+    transition-duration: 500ms;
+}
 
+.transition .square:hover {
+    background-color: darkblue;
+    color: white;
+    border-radius: 50%;
+}
+```
 
-<br>
-
+Quando nenhuma propriedade é escolhida, mas uma duração é determinada, ela é aplicada a todas as propriedades do elemento no momento que a página é carregada.
 
 <br>
 <br>
