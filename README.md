@@ -2272,35 +2272,188 @@ function_bind(); // Woof woof
 
 - #### **Arrow Functions**
 
+É uma função anônima, porém não pode ser usada com a palavra chave `this`, arrow functions perdem o contexto mesmo se estiverem dentro do objeto. `bind` também não funciona. A arrow function entende o `this` como o objeto global `window`. Sintaxe:
 
+```js
+(parâmetro) => {
+  //código a ser executado
+}
+```
 
 <br>
 
 - #### **Callback**
 
+Quando uma função é passada como parâmetro para outra função ela é chamada de callback. No exemplo abaixo, as funções `hi` e `bye` são callbacks.
 
+```js
+function hi() {
+    console.log("Hi");
+}
+
+function bye() {
+    console.log("Bye");
+}
+
+function greetUser(greeting, name) {
+    greeting();
+    console.log(name);
+}
+
+greetUser(hi, "Vitor"); // Hi Vitor
+greetUser(bye, "Vitor"); // Bye Vitor
+```
+
+Funções callback são úteis quando é preciso se comunicar com um servidor, por exemplo, e esperar uma resposta (execução assíncrona). Esse delay entre requisitar e receber uma informação é simulado no exemplo abaixo com um timeout de 1s:
+
+```js
+// (1) Com callback:
+
+let users = ["John", "James", "Joe", "Joseph"];
+
+function addUser(name, callback) {
+    setTimeout(() => {
+        users.push(name);
+        callback();
+    }, 1000);
+}
+
+function listUsers() {
+    console.log(users);
+}
+
+addUser("Vitor", listUsers);
+
+// ['John', 'James', 'Joe', 'Joseph', 'Vitor']
+```
+
+Se fosse realizado um fluxo de execução tradicional (síncrono), como no exemplo abaixo, a listagem de usuários não mostraria o usuário recém inserido (Vitor):
+
+```js
+// (2) Sem callback:
+
+let users2 = ["John", "James", "Joe", "Joseph"];
+
+function addUser2(name) {
+    setTimeout(() => {
+        users2.push(name);
+    }, 1000);
+}
+
+function listUsers2() {
+    console.log(users2);
+}
+
+addUser2("Vitor");
+
+listUsers2();
+
+// ['John', 'James', 'Joe', 'Joseph']
+```
 
 <br>
 
 - #### **Promises**
 
+São uma maneira mais nova de se usar callback. Uma *promise* é um objeto que recebe como parâmetro uma função com dois argumentos: `resolve` e `reject`, que são funções que devem ser executadas em caso de sucesso ou falha da operação. Ao final da função, a promise deve ser retornada. No momento do uso, para se utilizar o retorno da função (a promise), utilizar `.then`, que será executada caso a promise tenha terminado executando `resolve()`. Para capturar erros, utilizar `.catch` e uma função a ser executada caso a promise tenha terminado executando `reject()`. Mesmo exemplo anterior, utilizando promises:
+
+```js
+// (3) Com promise
+
+let users3 = ["John", "James", "Joe", "Joseph"];
+
+function addUser3(name) {
+    let promise = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            users3.push(name);
+
+            let error = false;
+
+            if (!error) {
+                resolve();
+            } else {
+                reject({
+                    msg: "(3) Com promise ==> Alguma mensagem de erro! :(",
+                });
+            }
+        }, 1000);
+    });
+
+    return promise;
+}
+
+function listUsers3() {
+    console.log("(3) Com promise");
+    console.log(users3);
+}
+
+addUser3("Vitor")
+    .then(listUsers3)
+    .catch((error) => {
+        console.log(error.msg);
+    });
+    
+// ['John', 'James', 'Joe', 'Joseph', 'Vitor']
+```
+
+<br>
+
+- #### **Async Await**
+
+Uma outra maneira de usar promises.
+
+`async` precede a definição de uma função e indica que, dentro dessa função, em algum momento será necessário esperar o retorno de uma promise. Isso será indicado pela palavra reservada `await`. O mesmo exemplo anterior:
+
+```js
+let users4 = ["John", "James", "Joe", "Joseph"];
+
+function addUser4(name) {
+    let promise = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            users4.push(name);
+
+            let error = false;
+
+            if (!error) {
+                resolve();
+            } else {
+                reject({
+                    msg: "(4) Com async await ==> Alguma mensagem de erro! :(",
+                });
+            }
+        }, 1000);
+    });
+
+    return promise;
+}
+
+function listUsers4() {
+    console.log("(4) Com async await");
+    console.log(users4);
+}
+
+async function run() {
+    try {
+        await addUser4("Vitor");
+        listUsers4();
+    } catch (error) {
+        console.log(error.msg);
+    }
+}
+run();
+
+// ['John', 'James', 'Joe', 'Joseph', 'Vitor']
+```
+
+<br>
+
+- #### **Higher-Order Functions: Filter**
+
 
 
 <br>
 
-- #### **Async Await - Uma outra maneira de usar promises**
-
-
-
-<br>
-
-- #### **Filter**
-
-
-
-<br>
-
-- #### **Map**
+- #### **Higher-Order Functions: Map**
 
 
 
@@ -2324,7 +2477,7 @@ function_bind(); // Woof woof
 
 <br>
 
-- #### **Reduce**
+- #### **Higher-Order Functions: Reduce**
 
 
 
