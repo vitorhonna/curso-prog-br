@@ -1,5 +1,11 @@
 # Curso de Desenvolvimento Web - Programador BR
 
+<div align="center">
+  <a href="https://github.com/vitorhonna/curso-prog-br">
+    <img height="150px" alt="Logo Programador BR" src="images/logo_progBr.png">
+  </a>
+</div>
+
 ## Certificados
 
 > _:( Ainda não temos certificados_
