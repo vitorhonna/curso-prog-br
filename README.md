@@ -2447,56 +2447,297 @@ run();
 
 <br>
 
-- #### **Higher-Order Functions: Filter**
+- #### Higher-Order Functions: **Filter**
 
+Higher-Order Functions (HOF) são funções que aceitam um função como parâmetro e/ou retornam uma função.
 
+O método `filter()` recebe uma função callback que deve retornar *true*/*false* e cria um novo array com todos os elementos que passaram no teste implementado pela função fornecida (retornaram *true*). Essa função recebe automaticamente como parâmetros os elementos da array à qual o método está sendo aplicado (e também o índice do elemento e o array inteiro, opcionalmente - mesmo esquema dos parâmetros de `forEach`).
+
+Por exemplo, dada uma lista de objetos que contém nomes e idades de alunos, filtrar os alunos maiores e menores de 30 anos:
+
+```js
+// Criação da lista de objetos
+function newStudent(name, age) {
+    return { name, age };
+}
+
+let students = [
+    newStudent("Mario", 23),
+    newStudent("José", 45),
+    newStudent("Marcia", 29),
+    newStudent("João", 35),
+];
+
+// Filtrar alunos menores de 30 anos
+let studentsUnder30 = students.filter((student) => {
+  return student.age < 30;
+});
+
+  // Filtrar alunos maiores de 30 anos
+let studentsOver30 = students.filter((student) => {
+    return student.age > 30;
+});
+
+console.log("Students under 30: ", studentsUnder30);
+console.log("Students over 30: ", studentsOver30);
+```
 
 <br>
 
-- #### **Higher-Order Functions: Map**
+- #### Higher-Order Functions: **Map**
 
+O método `map()` retorna um array porém é mais generalista que `filter()`. Pode-se criar uma nova array utilizando os dados da array original. Por exemplo, criar uma array com frases descrevendo a idade de cada aluno (mesma lista do exemplo anterior):
 
+```js
+let studentsDescription = students.map((student) => {
+    return `${student.name} is ${student.age} years old`;
+});
+
+console.log(studentsDescription);
+
+// ['Mario is 23 years old', 'José is 45 years old', 'Marcia is 29 years old', 'João is 35 years old']
+```
+
+Tomar cuidado para não modificar a array original. O parâmetro passado para a função callback é uma referência ao array original, não uma cópia/valor.
+
+<br>
+
+- #### Higher-Order Functions: **Reduce**
+
+O método `reduce()` executa uma função *reducer* agregadora (definida pelo usuário) para cada membro do array, resultando num único valor de retorno. Pode ser usado para fazer uma soma, encontrar o maior ou menor valor numa lista, etc. O *reducer* sempre percorrerá toda a lista e retornará apenas um resultado.
+O primeiro argumento passado para o método deve ser a função *reducer*, que possui dois parâmetros: um acumulador e o item da iteração, o valor retornado a cada iteração é atribuído ao acumulador. O segundo argumento deve ser o valor inicial do acumulador.
+
+```js
+let order = [
+    { item: "Hamburger", price: 20 },
+    { item: "Fries", price: 12 },
+    { item: "Coke", price: 9 },
+    { item: "Chocolate Cake", price: 16 },
+];
+
+let orderTotal = order.reduce((total, item) => {
+    return total + item.price;
+}, 0);
+
+console.log("orderTotal =", orderTotal); // orderTotal = 57
+```
+
+Também é possível utilizar `reduce()` para criar strings:
+
+```js
+let orderItems = order.reduce((items, item) => {
+    return items + " " + item.item;
+}, "Order Items:");
+
+console.log(orderItems); // Order Items: Hamburger Fries Coke Chocolate Cake
+```
 
 <br>
 
 - #### **Valor vs Referência**
 
+Em JS, quando um objeto (ou array) é atribuído a outra variável, há apenas uma passagem de referência (como se fosse um ponteiro), não é criada uma cópia e atribuída a outra variável. Assim, se alguma propriedade for modificada, haverá alteração no original. Por exemplo:
 
+```js
+let objA = { name: "John", age: 5 };
+let objB = objA;
+objB.age = 10;
+console.log(objA.age); // 10
+console.log(objB.age); // 10
+
+let arrA = [1, 2, 3];
+let arrB = arrA;
+arrB[0] = 100;
+console.log(arrA[0]); // 100
+console.log(arrB[0]); // 100
+```
+
+Isso não ocorre com tipos primitivos (strings, numbers, booleans), em que há passagem por valor:
+
+```js
+let a = 5;
+let b = a;
+b = 10;
+console.log(a); // 5
+console.log(b); // 10
+```
+
+Contudo, se um novo objeto/array for atribuído a nova variável (B) não há alteração no original:
+
+```js
+let obj_A = { name: "John", age: 5 };
+let obj_B = obj_A;
+obj_B = { name: "Mary", age: 10 };
+console.log(obj_A.age); // 5
+console.log(obj_B.age); // 10
+
+let arr_A = [1, 2, 3];
+let arr_B = arr_A;
+arr_B = [100, 200, 300];
+console.log(arr_A); // [1, 2, 3]
+console.log(arr_B); // [100, 200, 300]
+```
+
+Para contornar a passagem por referência e criar uma cópia:
+
+-> Método `slice()`: geralmente usado para separar uma parte de um array, quando não é passado nenhum valor, cria uma cópia do array inteiro.
+
+```js
+let arrA_2 = [1, 2, 3];
+let arrB_2 = arrA_2.slice();
+arrB_2[0] = 100;
+console.log(arrA_2); // [1, 2, 3]
+console.log(arrB_2); // [100, 2, 3]
+```
+
+-> `[...<arrName>]`: spread operator. Copia todos os valores de um array para um novo array, pode-se adicionar novas informações ou não (quando não, apenas uma cópia é criada).
+
+```js
+let arrA_3 = [1, 2, 3];
+let arrB_3 = [...arrA_3, 4, 5, 6];
+arrB_3[0] = 100;
+console.log(arrA_3); // [1, 2, 3]
+console.log(arrB_3); // [100, 2, 3, 4, 5, 6]
+```
+
+-> `Objet.assign(<obj1>, <obj2>)`: adiciona as propriedades do objeto 2 ao objeto 1 e retorna o um objeto combinado. Se o objeto 1 for vario, retorna apenas uma cópia do objeto 2.
+
+```js
+let objA_2 = { name: "John", age: 5 };
+let objB_2 = Object.assign({ hair: "black" }, objA_2);
+objB_2.age = 10;
+console.log(objA_2); // {name: 'John', age: 5}
+console.log(objB_2); // {hair: 'black', name: 'John', age: 10}
+```
+
+-> `{...<objName>}`: spread operator. Mesmo uso mostrado acima para arrays.
+
+```js
+let objA_3 = { name: "John", age: 5 };
+let objB_3 = { ...objA_3, hair: "black" };
+objB_3.age = 10;
+console.log(objA_3); // {name: 'John', age: 5}
+console.log(objB_3); // {name: 'John', age: 10, hair: 'black'}
+```
 
 <br>
 
-- #### **Spread Operator**
+- #### **Spread Operator `...`**
 
+Permite unir objetos ou arrays. Atenção com os nomes das keys (devem ser únicos), se houver repetição, prevalecerá apenas o último.
 
+```js
+let person = {
+    name: "John",
+    age: 25,
+};
+
+let contact = {
+    phoneNumber: "123456789",
+    email: "john.doe@gmail.com",
+};
+
+let personContact = { ...person, ...contact };
+
+console.log(personContact); 
+// {name: 'John', age: 25, phoneNumber: '123456789', email: 'john.doe@gmail.com'}
+```
 
 <br>
 
 - #### **Desestruturando um objeto**
 
+Utilizado para extrair propriedades de um objeto salvando-as em variáveis com o mesmo nome das keys. A variável que receberá o valor deve ter o mesmo nome da key, caso contrário seu valor será indefinido. É possível utilizar o spread operator em uma desestruturação.
 
+```js
+let personInfo = {
+    name: "John",
+    age: 25,
+    phoneNumber: "123456789",
+    email: "john.doe@gmail.com",
+};
+
+let { name, email, number, ...otherInfo } = personInfo;
+
+console.log(name); // John
+console.log(email); // john.doe@gmail.com
+console.log(number); // undefined
+console.log(otherInfo); // {age: 25, phoneNumber: '123456789'}
+```
+
+Para arrays o funcionamento é semelhante, porém as variáveis podem ter qualquer nome. O importante é seu posicionamento.
+
+```js
+let array = [1, 2, 3];
+let [pos0, pos1, pos2] = array;
+console.log(pos0); // 1
+```
 
 <br>
 
-- #### **Higher-Order Functions: Reduce**
-
-
-
-<br>
-
-- #### **Desafio - JS Avançado**
-
-
-
-<br>
 
 - #### **Fetch**
 
+Com `fetch()` é possível fazer requisições passando endpoints. O retorno é uma *Promise*. Por exemplo, para obter a conversão de EUR para BRL:
 
+Usando `.then()` para receber resposta:
+
+```js
+let currencyCode = "EUR";
+
+let APIurl = `https://v6.exchangerate-api.com/v6/4d40d8e180e79b77a58e09fc/pair/${currencyCode}/BRL`;
+
+fetch(APIurl)
+    .then((response) => {
+        return response.json();
+    })
+    .then((responseJSON) => {
+        let conversion_rate = responseJSON.conversion_rate;
+        console.log(conversion_rate);
+    });
+```
+
+Usando `async await`:
+
+```js
+let currencyCode = "EUR";
+
+async function getExchangeRate(currencyCode) {
+    let APIurl = `https://v6.exchangerate-api.com/v6/4d40d8e180e79b77a58e09fc/pair/${currencyCode}/BRL`;
+    let response = await fetch(APIurl);
+    let responseJSON = await response.json();
+    let conversion_rate = responseJSON.conversion_rate;
+    console.log(conversion_rate);
+}
+
+getExchangeRate(currencyCode);
+```
 
 <br>
 
-- #### **try catch**
+- #### **try catch finally**
 
+Utilizado para tratamento de erros. Quando um erro ocorre, a execução do script é interrompida. Para evitar que isso aconteça, utiliza-se `try {} catch {} finally {}` para capturar os erros e poder continuar a execução.
+
+Para levantar um erro, utilizar `throw new Error(<msg>)`.
+
+```js
+let userName = "";
+
+try {
+    if (userName === "") {
+        throw new Error("O nome não pode ser vazio");
+    }
+    console.log(userName);
+} catch (error) {
+    console.log(error.message);
+} finally {
+    console.log("Boa noite");
+}
+
+// O nome não pode ser vazio
+// Boa noite
+```
 
 <br>
 <br>
