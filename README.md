@@ -8,11 +8,18 @@
 
 ## Certificados
 
-> _:( Ainda não temos certificados_
+<div align="center">
+  <a href="https://programadorbr.com/certificado/DVWBVSH17HT307110">
+    <img height="300px" alt="Logo Programador BR" src="https://github.com/vitorhonna/curso-prog-br/blob/main/images/CertificadoProgBR_VitorHonna_DVWBVSH17HT307110.png">
+    <p>(Clique para ampliar)</p>
+  </a>
+</div>
 
-- HTML, CSS e Javascript (Módulo 1 ao 14)
-- Firebase, jQuery, Bootstrap (Módulo 17 ao 20)
-- Node, Mongo (Módulo 21 ao 30)
+- [HTML, CSS e Javascript (Módulo 1 ao 14)](https://programadorbr.com/certificado/DVWBVSH17HT307110) - Identificador de autenticidade: DVWBVSH17HT307110
+- *Firebase, jQuery, Bootstrap (Módulo 17 ao 20)*
+- *Node, Mongo (Módulo 21 ao 30)*
+
+Para verificar a autentencidade de um certificado, acesse: https://programadorbr.com/autenticidade e insira o identificador.
 
 ## Índice
 
