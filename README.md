@@ -2757,7 +2757,7 @@ try {
 
 ---
 
-## Design Resources
+## Free Design Resources
 
 - [Pinterest](https://www.pinterest.com)
 - [Behance](https://www.behance.net)
